@@ -1,3 +1,6 @@
 /documentation
 /node_modules
 /tmp
+bundle.js
+bundle.js.map
+.DS_Store
