@@ -19,13 +19,22 @@ const receiveErrors = errors => ({
 });
 
 export const login = user => dispatch => (
-  ApiUtil.login(user).then(res => dispatch(receiveCurrentUser(res)))
+  ApiUtil.login(user).then(
+    res => dispatch(receiveCurrentUser(res)),
+    errors => dispatch(receiveErrors(errors))
+  )
 );
 
 export const logout = () => dispatch => (
-  ApiUtil.logout().then(res => dispatch(logoutCurrentUser(res)))
+  ApiUtil.logout().then(
+    res => dispatch(logoutCurrentUser(res)),
+    errors => dispatch(receiveErrors(errors))
+  )
 );
 
-export const signup = user => dispatch (
-  ApiUtil.signup(user).then(res => dispatch(receiveCurrentUser(res)))
+export const signup = user => dispatch => (
+  ApiUtil.signup(user).then(
+    res => dispatch(receiveCurrentUser(res)),
+    errors => dispatch(receiveErrors(errors))
+  )
 );
