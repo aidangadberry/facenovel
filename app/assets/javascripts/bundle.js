@@ -173,9 +173,9 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _session_form_navbar = __webpack_require__(/*! ./session_form/session_form_navbar */ "./frontend/components/session_form/session_form_navbar.jsx");
+var _login_form_navbar = __webpack_require__(/*! ./session_form/login_form_navbar */ "./frontend/components/session_form/login_form_navbar.jsx");
 
-var _session_form_navbar2 = _interopRequireDefault(_session_form_navbar);
+var _login_form_navbar2 = _interopRequireDefault(_login_form_navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -183,7 +183,7 @@ var App = function App() {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_session_form_navbar2.default, null)
+    _react2.default.createElement(_login_form_navbar2.default, null)
   );
 };
 
@@ -236,14 +236,299 @@ exports.default = Root;
 
 /***/ }),
 
-/***/ "./frontend/components/session_form/session_form_navbar.jsx":
+/***/ "./frontend/components/session_form/login_form_container.js":
 /*!******************************************************************!*\
-  !*** ./frontend/components/session_form/session_form_navbar.jsx ***!
+  !*** ./frontend/components/session_form/login_form_container.js ***!
   \******************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/aidang/Desktop/AppAcademy/FullStack/frontend/components/session_form/session_form_navbar.jsx'");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _session_actions = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+var _session_form = __webpack_require__(/*! ./session_form */ "./frontend/components/session_form/session_form.jsx");
+
+var _session_form2 = _interopRequireDefault(_session_form);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    errors: state.errors.session,
+    currentUserId: state.session.currentUserId,
+    loginInfo: { email: '', password: '' }
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    login: function login(user) {
+      return dispatch((0, _session_actions.login)(user));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_session_form2.default);
+
+/***/ }),
+
+/***/ "./frontend/components/session_form/login_form_navbar.jsx":
+/*!****************************************************************!*\
+  !*** ./frontend/components/session_form/login_form_navbar.jsx ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _login_form_container = __webpack_require__(/*! ./login_form_container */ "./frontend/components/session_form/login_form_container.js");
+
+var _login_form_container2 = _interopRequireDefault(_login_form_container);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LoginFormNavbar = function (_React$Component) {
+  _inherits(LoginFormNavbar, _React$Component);
+
+  function LoginFormNavbar() {
+    _classCallCheck(this, LoginFormNavbar);
+
+    return _possibleConstructorReturn(this, (LoginFormNavbar.__proto__ || Object.getPrototypeOf(LoginFormNavbar)).apply(this, arguments));
+  }
+
+  _createClass(LoginFormNavbar, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'login-navbar-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'login-navbar' },
+          _react2.default.createElement(
+            'div',
+            { className: 'logo' },
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                'facenovel'
+              )
+            )
+          ),
+          _react2.default.createElement(_login_form_container2.default, null)
+        )
+      );
+    }
+  }]);
+
+  return LoginFormNavbar;
+}(_react2.default.Component);
+
+exports.default = LoginFormNavbar;
+
+/***/ }),
+
+/***/ "./frontend/components/session_form/session_form.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/session_form/session_form.jsx ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SessionForm = function (_React$Component) {
+  _inherits(SessionForm, _React$Component);
+
+  function SessionForm(props) {
+    _classCallCheck(this, SessionForm);
+
+    var _this = _possibleConstructorReturn(this, (SessionForm.__proto__ || Object.getPrototypeOf(SessionForm)).call(this, props));
+
+    console.log(props);
+    _this.state = _this.props.loginInfo;
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(SessionForm, [{
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      console.log(this.props);
+      console.log(this.state);
+      this.props.login(this.state).then(function () {
+        return _this2.props.history.push('/');
+      });
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(field) {
+      var _this3 = this;
+
+      return function (e) {
+        return _this3.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'login-form-container' },
+        _react2.default.createElement(
+          'form',
+          { className: 'login-form', onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'table',
+            null,
+            _react2.default.createElement(
+              'tbody',
+              null,
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { htmlFor: 'email' },
+                    'Email or Phone'
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { htmlFor: 'password' },
+                    'Password'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement('input', {
+                    type: 'text',
+                    id: 'email',
+                    onChange: this.handleChange('email')
+                  })
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement('input', {
+                    type: 'password',
+                    id: 'password',
+                    onChange: this.handleChange('password')
+                  })
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { className: 'login-button' },
+                    _react2.default.createElement('input', {
+                      type: 'submit',
+                      value: 'Log In'
+                    })
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement('td', null),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    null,
+                    _react2.default.createElement(
+                      'a',
+                      { href: '#' },
+                      'Forgot account?'
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return SessionForm;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(SessionForm);
 
 /***/ }),
 

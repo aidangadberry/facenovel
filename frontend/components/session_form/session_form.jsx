@@ -1,15 +1,19 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = this.props.loginInfo;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    console.log(this.props);
+    console.log(this.state);
+    this.props.login(this.state).then(() => this.props.history.push('/'));
   }
 
   handleChange(field) {
@@ -70,4 +74,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
