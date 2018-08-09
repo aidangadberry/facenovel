@@ -4,16 +4,20 @@ import { withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = this.props.loginInfo;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  renderErrors(errors) {
+
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props);
-    console.log(this.state);
-    this.props.login(this.state).then(() => this.props.history.push('/'));
+    this.props.login(this.state).then(
+      () => this.props.history.push('/'),
+      errors => renderErrors(errors)
+    );
   }
 
   handleChange(field) {
@@ -22,8 +26,8 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form className="login-form" onSubmit={this.handleSubmit}>
+      <div>
+        <form onSubmit={this.handleSubmit}>
           <table>
             <tbody>
               <tr>
