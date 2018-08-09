@@ -4,8 +4,12 @@ import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 
 const mapStateToProps = state => {
-  let defaultBday = new Date();
-  defaultBday = defaultBday.setFullYear(defaultBday.getFullYear() - 25);
+  const today = new Date();
+  const defaultBday = {
+    year: today.getFullYear() - 25,
+    month: today.getMonth(),
+    day: today.getDate()
+  }
 
   return (
     {
