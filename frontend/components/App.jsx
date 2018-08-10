@@ -1,11 +1,11 @@
 import React from 'react';
-import LandingPage from './landing_page';
-import { AuthRoute } from 'react-router-dom';
+import { Route } from 'react-router';
+import RootControl from './root_control';
 
 const App = () => {
   return (
     <div>
-      <LandingPage />
+      <Route exact path="/" component={RootControl} />
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import SignupFormContainer from './session/signup_form_container';
-import LoginFormNavbar from './session/login_form_navbar';
+import SignupFormContainer from './signup_form_container';
+import LoginFormNavbar from './login_form_navbar';
 
 class LandingPage extends React.Component {
   render() {
