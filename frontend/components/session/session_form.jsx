@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.login(this.state).then(
       null,
-      errors => renderErrors(errors)
+      errors => this.renderErrors(errors)
     );
   }
 
