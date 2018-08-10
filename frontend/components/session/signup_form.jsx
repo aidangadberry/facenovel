@@ -31,9 +31,9 @@ class SignupForm extends React.Component {
   }
 
   birthdayPicker() {
-    let days = [];
-    let months = [];
-    let years = [];
+    let days = [<option value={null} key={0}>Day</option>];
+    let months = [<option value={null} key={0}>Month</option>];
+    let years = [<option value={null} key={0}>Year</option>];
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
     }
     for (var month = 0; month < 12; month++) {
       months.push(
-        <option value={month} key={month}>{monthNames[month]}</option>);
+        <option value={month} key={month + 1}>{monthNames[month]}</option>);
     }
     for (var year = 2018; year >= 1905; year--) {
       years.push(<option value={year} key={year}>{year}</option>);
@@ -68,9 +68,9 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="signup-form-container">
         <h1>Create a New Account</h1>
-        <h3>It's free and always will be.</h3>
+        <h2>It's free and always will be.</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-name">
             <input
@@ -98,12 +98,12 @@ class SignupForm extends React.Component {
               onChange={this.handleChange('password')}
               />
           </div>
-          <div className="signup-birthday">
-            <div>Birthday</div>
-            <span className="birthday-wrapper">
-              { this.birthdayPicker() }
-            </span>
-            <a href="#">Why do I need to provide my birthday?</a>
+          <span className="signup-birthday">
+            Birthday
+          </span>
+          <div className="birthday-wrapper">
+            { this.birthdayPicker() }
+            <a href="#">Why do I need to provide my <br/> birthday?</a>
           </div>
           <div>
             <span>
@@ -112,8 +112,9 @@ class SignupForm extends React.Component {
                 name="sex"
                 value="F"
                 onClick={this.handleChange('sex')}
+                id="test1"
                 />
-              <label>Female</label>
+              <label htmlFor="test1">Female</label>
             </span>
             <span>
               <input
@@ -121,14 +122,17 @@ class SignupForm extends React.Component {
                 name="sex"
                 value="M"
                 onClick={this.handleChange('sex')}
+                id="test2"
                 />
-              <label>Male</label>
+              <label htmlFor="test2">Male</label>
             </span>
           </div>
-          <div>
-            By clicking Sign Up, you agree to our Terms, Data Policy <br/>
-            and Cookies Policy. You may receive SMS Notifications from <br/>
-            us and can opt out any time.
+          <div id="terms">
+            <p>
+              By clicking Sign Up, you agree to our <a>Terms</a>, <a>Data Policy</a>
+              <br/>and <a>Cookies Policy</a>. You may receive SMS Notifications
+               from<br/> us and can opt out any time.
+            </p>
           </div>
           <div>
             <input type="submit" value="Sign Up"/>

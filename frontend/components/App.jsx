@@ -1,12 +1,12 @@
 import React from 'react';
-import LoginFormNavbar from './session_form/login_form_navbar';
-import SignupFormContainer from './session_form/signup_form_container';
+import LoginFormNavbar from './session/login_form_navbar';
+import LandingPage from './landing_page';
 
 const App = () => {
   return (
     <div>
       <LoginFormNavbar />
-      <SignupFormContainer />
+      <LandingPage />
     </div>
   )
 };

@@ -1,0 +1,143 @@
+
+
+.landing-page-container {
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #e9ebee;
+}
+
+.recent-logins {
+  background-color: lightgrey;
+  width: 532px;
+  padding-right: 48px;
+  height: 500px;
+  background-clip: content-box;
+}
+
+.signup-form-container {
+  width: 400px;
+
+  form {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "Lucida Grande";
+      margin-right: 1px;
+  }
+
+  h1 {
+    font-family: 'Freight-Sans', sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    color: #333;
+    line-height: 43px;
+    padding-bottom: 5px;
+  }
+
+  h2 {
+    font-family: 'Freight-Sans-Light', Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    word-spacing: 3px;
+    color: #333;
+    margin-bottom: 22px;
+  }
+
+  form>div {
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  div>input {
+    border: 1px solid #bdc7d8;
+    border-radius: 5px;
+    padding: 8px 9px;
+    font-size: 18px;
+    width: 100%;
+
+    &:nth-of-type(2) {
+      margin-left: 10px;
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  span {
+    font-size: 18px;
+    margin-top: 23px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .birthday-wrapper {
+
+  }
+
+  .birthday-wrapper a {
+    color: #365899;
+    font-size: 11px;
+    line-height: 1.3;
+    margin-top: 3px;
+  }
+
+  select {
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid #bdc7d8;
+
+    &:last-of-type {
+      margin-right: 10px;
+    }
+  }
+
+  div>span {
+    height: 20px;
+    width: 90px;
+    padding: 5px 4px;
+    display: block;
+    line-height: 16px;
+    margin-top: -1px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: flex-end;
+    label {
+      margin-left: 3.7px;
+    }
+  }
+
+  #terms {
+    font-size: 11px;
+    line-height: 14.75px;
+    color: #777;
+    a {
+      color: #365899;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    margin: 11px 0;
+    background-color: #69a74e;
+    background-image: linear-gradient(#67ae55, #578843);
+    box-shadow: inset 0 1px 1px #a4e388;
+    border: 1px solid;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    border-radius: 5px;
+    width: 194px;
+    color: white;
+    padding: 7px 9px;
+    font-family: 'Freight-Sans', Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    cursor: pointer;
+  }
+}

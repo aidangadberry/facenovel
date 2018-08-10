@@ -1,12 +1,5 @@
 /* 0e1f56, 3b5998, 6d84b4, afbdd4, and d8dfea */
 
-@font-face {
-    font-family: 'Klavika-Bold';
-    src: asset-url('fonts/Klavika-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .login-navbar-container {
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
@@ -23,8 +16,9 @@
 }
 
 .logo {
+  font-family: sans-serif;
   font-family: 'Klavika', sans-serif;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: bold;
   color: white;
   margin-top: 18px;

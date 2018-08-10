@@ -19,6 +19,25 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+@font-face {
+    font-family: 'Freight-Sans';
+    src: url('freight_sans.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Freight-Sans-Light';
+    src: url('freight_sans_light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Klavika';
+    src: url('klavika_bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
