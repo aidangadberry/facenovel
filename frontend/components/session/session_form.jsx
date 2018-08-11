@@ -9,7 +9,9 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(errors) {
-
+    console.log(errors);
+    document.getElementById("login-errors")
+    .appendChild(document.createTextNode(errors.errors.responseJSON))
   }
 
   handleSubmit(e) {
@@ -26,7 +28,8 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={"login-container"}>
+        <div id="login-errors"></div>
         <form onSubmit={this.handleSubmit}>
           <table>
             <tbody>

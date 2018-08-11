@@ -7,12 +7,25 @@
   border-bottom: 1px solid #133783
 }
 
+.login-container {
+  display: flex;
+  align-items: center;
+}
+
 .login-navbar {
   display: flex;
   justify-content: space-between;
   padding-top: 12px;
   width: 980px;
   margin: 0 auto;
+}
+
+#login-errors, #signup-errors {
+  color: red;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "Lucida Grande";
+  word-wrap: normal;
+  width: 200px;
 }
 
 .logo {

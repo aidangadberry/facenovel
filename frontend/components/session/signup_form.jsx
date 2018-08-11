@@ -8,16 +8,26 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  renderErrors(errors) {
+    console.log(errors);
+    document.getElementById("signup-errors")
+    .appendChild(document.createTextNode(errors.errors.responseJSON))
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state).then(
       null,
-      errors => renderErrors(errors)
+      errors => this.renderErrors(errors)
     );
   }
 
   handleChange(field) {
     return e => this.setState({[field]: e.target.value})
+  }
+
+  demoUser() {
+    
   }
 
   handleBirthday(field) {
@@ -71,6 +81,7 @@ class SignupForm extends React.Component {
       <div className="signup-form-container">
         <h1>Create a New Account</h1>
         <h2>It's free and always will be.</h2>
+        <div id="signup-errors"></div>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-name">
             <input
@@ -136,6 +147,7 @@ class SignupForm extends React.Component {
           </div>
           <div>
             <input type="submit" value="Sign Up"/>
+            <button onClick={() => this.demoUser()}>Demo</button>
           </div>
         </form>
       </div>
