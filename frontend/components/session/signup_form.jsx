@@ -27,7 +27,7 @@ class SignupForm extends React.Component {
   }
 
   demoUser() {
-    
+    this.props.login({email: "demo@demo.com", password: "123123"});
   }
 
   handleBirthday(field) {
