@@ -9,7 +9,6 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(errors) {
-    console.log(errors);
     document.getElementById("login-errors")
     .appendChild(document.createTextNode(errors.errors.responseJSON))
   }

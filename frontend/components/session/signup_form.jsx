@@ -6,10 +6,10 @@ class SignupForm extends React.Component {
     super(props);
     this.state = this.props.userInfo;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   renderErrors(errors) {
-    console.log(errors);
     document.getElementById("signup-errors")
     .appendChild(document.createTextNode(errors.errors.responseJSON))
   }
@@ -26,7 +26,8 @@ class SignupForm extends React.Component {
     return e => this.setState({[field]: e.target.value})
   }
 
-  demoUser() {
+  demoUser(e) {
+    e.preventDefault();
     this.props.login({email: "demo@demo.com", password: "123123"});
   }
 
@@ -147,7 +148,7 @@ class SignupForm extends React.Component {
           </div>
           <div>
             <input type="submit" value="Sign Up"/>
-            <button onClick={() => this.demoUser()}>Demo</button>
+            <button onClick={this.demoUser}>Demo</button>
           </div>
         </form>
       </div>
