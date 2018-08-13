@@ -18,13 +18,12 @@ const receiveErrors = errors => ({
   errors
 });
 
-export const login = user => dispatch => {
-  console.log(user);
+export const login = user => dispatch => (
   ApiUtil.login(user).then(
     res => dispatch(receiveCurrentUser(res)),
     errors => dispatch(receiveErrors(errors))
   )
-};
+);
 
 export const logout = () => dispatch => (
   ApiUtil.logout().then(
