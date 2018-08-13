@@ -9,7 +9,6 @@ class SignupForm extends React.Component {
   }
 
   renderErrors(errors) {
-    console.log(errors);
     document.getElementById("signup-errors")
     .appendChild(document.createTextNode(errors.errors.responseJSON))
   }
