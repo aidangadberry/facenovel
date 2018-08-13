@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
 
 const mapStateToProps = state => ({
@@ -34,7 +35,7 @@ class MainNavbar extends React.Component {
           </div>
           <div className="navbar-right">
             <div>
-              <a href="#">{this.props.currentUser.fname}</a>
+              <Link to={`/${this.props.currentUser.userUrl}`}>{this.props.currentUser.fname}</Link>
             </div>
             <div>
               <a href="#">Home</a>

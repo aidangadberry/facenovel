@@ -5,7 +5,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <MainNavbar />
+        <div>Sup homie</div>
       </div>
     );
   }
