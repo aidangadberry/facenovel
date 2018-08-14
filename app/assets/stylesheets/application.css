@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.main-content-wrapper {
+  position: relative;
+  top: 43px;
+}

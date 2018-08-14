@@ -3,13 +3,13 @@ import React from 'react';
 class ProfileNavbar extends React.Component {
   render() {
     return (
-      <div>
+      <div className="profile-navbar">
         <ul>
-          <li>Timeline</li>
-          <li>About</li>
-          <li>Friends</li>
-          <li>Photos</li>
-          <li>More</li>
+          <li><a href="#">Timeline</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Friends</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">More</a></li>
         </ul>
       </div>
     )

@@ -16,11 +16,13 @@ class App extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <MainNavbar />
-          <Switch>
-            <Route path="/:userUrl" component={ProfileContainer} />
-            <Route path="/" component={HomePage} />
-          </Switch>
+          <Route path="/" component={MainNavbar} />
+          <div className="main-content-wrapper">
+            <Switch>
+              <Route path="/:userUrl" component={ProfileContainer} />
+              <Route path="/" component={HomePage} />
+            </Switch>
+          </div>
         </div>
       )
     } else {

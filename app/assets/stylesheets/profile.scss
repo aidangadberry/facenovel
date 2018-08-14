@@ -1,0 +1,76 @@
+.profile-container {
+  position: relative;
+  width: 851px;
+  margin: 0 auto;
+  left: -65px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "Lucida Grande";
+}
+
+.cover-photo {
+  background-image: url("cover.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 313px;
+  border: 1px solid rgba(0, 0, 0, .25);
+  border-top: 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.profile-name {
+  margin-left: 201px;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+.profile-photo-container {
+  position: relative;
+  bottom: -66px;
+  left: 16px;
+  padding: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.profile-photo {
+  background-image: url("profile.png");
+  background-size: cover;
+  background-position: center center;
+  height: 160px;
+  width: 160px;
+  border: 4px solid white;
+  border-radius: 2px;
+}
+
+.profile-navbar {
+  width: 648px;
+  height: 43px;
+  padding-left: 201px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #d3d6db;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+
+  ul {
+    border-left: 1px solid #e9eaed;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  li {
+    border-right: 1px solid #e9eaed;
+  }
+
+  a {
+    text-decoration: none;
+    color: #365899;
+    line-height: 43px;
+    padding: 0 20px;
+  }
+}

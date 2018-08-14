@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
 
 const mapStateToProps = state => ({
@@ -66,4 +66,4 @@ class MainNavbar extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainNavbar);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainNavbar));
