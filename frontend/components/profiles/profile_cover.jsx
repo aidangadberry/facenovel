@@ -20,7 +20,7 @@ class ProfileCover extends React.Component {
               <div className="profile-photo" />
             </div>
             <div className="profile-name">
-              User Name
+              {this.props.user.fname} {this.props.user.lname}
             </div>
           </div>
           <div className="cover-content-right">

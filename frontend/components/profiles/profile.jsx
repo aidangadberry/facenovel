@@ -11,7 +11,7 @@ class Profile extends React.Component {
     console.log(this.props);
     return (
       <div className="profile-container">
-        <ProfileCover />
+        <ProfileCover user={this.props.user} />
         <ProfileContent />
       </div>
     )

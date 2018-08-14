@@ -2,10 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { fetchUserByUrl } from '../../actions/user_actions';
 import Profile from './profile';
+import { getUserFromUrl } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-  location: ownProps.location,
-  userUrl: ownProps.match.params.userUrl
+  userUrl: ownProps.match.params.userUrl,
+  user: getUserFromUrl(state, ownProps.match.params.userUrl)
 });
 
 const mapDispatchToProps = dispatch => ({
