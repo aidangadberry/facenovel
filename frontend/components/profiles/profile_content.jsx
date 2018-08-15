@@ -6,12 +6,22 @@ import TimelineContent from './timeline_content';
 // import PhotosContent from './photos_content';
 
 class ProfileContent extends React.Component {
+  formatBirthday(birthday) {
+    let birthdayArr = birthday.split("-");
+    birthdayArr.push(birthdayArr.shift());
+    return birthdayArr.join("/")
+  }
+
   render() {
     return (
       <div>
         <div className="content-sidebar">
           <div className="profile-info">
-            
+            <div>Info</div>
+            <div>
+              <i class="fas fa-birthday-cake"></i>
+              {this.formatBirthday(this.props.user.birthday)}
+            </div>
           </div>
         </div>
         <div className="content-main">

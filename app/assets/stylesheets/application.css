@@ -17,6 +17,8 @@
 .main-content-wrapper {
   position: relative;
   top: 43px;
+}
+
+body {
   background-color: #e9ebee;
-  height: 100%;
 }

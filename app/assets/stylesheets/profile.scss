@@ -8,7 +8,7 @@
 }
 
 .cover-photo {
-  background-image: url("cover.jpg");
+  background-image: image_url("cover.jpg");
   background-size: cover;
   background-position: center center;
   height: 313px;
@@ -37,7 +37,7 @@
 }
 
 .profile-photo {
-  background-image: url("profile.png");
+  background-image: image_url("profile.png");
   background-size: cover;
   background-position: center center;
   height: 160px;
@@ -93,4 +93,17 @@
       margin-left: 10px;
     }
   }
+}
+
+.content-sidebar {
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  width: 321px;
+  padding: 12px;
+}
+
+.profile-info {
+
 }
