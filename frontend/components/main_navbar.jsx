@@ -38,16 +38,16 @@ class MainNavbar extends React.Component {
               <Link to={`/${this.props.currentUser.userUrl}`}>{this.props.currentUser.fname}</Link>
             </div>
             <div>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </div>
             <div>
-              <a href="#"><div className="navbar-friends"></div></a>
-              <a href="#"><div className="navbar-messages"></div></a>
-              <a href="#"><div className="navbar-notifications"></div></a>
+              <a><div className="navbar-friends"></div></a>
+              <a><div className="navbar-messages"></div></a>
+              <a><div className="navbar-notifications"></div></a>
             </div>
             <div>
-              <a href="#"><div className="navbar-help"></div></a>
-              <a href="#">
+              <a><div className="navbar-help"></div></a>
+              <a>
                 <div
                   className="navbar-settings"
                   onClick={() => this.openDropdown()}
@@ -65,5 +65,7 @@ class MainNavbar extends React.Component {
     )
   }
 }
+
+  // <Link to={`/${this.props.currentUser.userUrl}`}>{this.props.currentUser.fname}</Link>
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainNavbar));

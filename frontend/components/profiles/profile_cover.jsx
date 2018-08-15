@@ -2,14 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ProfileNavbar from './profile_navbar';
 
-// const mapStateToProps = (state, ownProps) => ({
-//   user: state.entities.users
-// });
-//
-// const mapDispatchToProps = dispatch => ({
-//
-// });
-
 class ProfileCover extends React.Component {
   render() {
     return (
@@ -36,7 +28,4 @@ class ProfileCover extends React.Component {
   }
 }
 
-
-// {this.props.user.fname} {this.props.user.lname}
 export default ProfileCover;
-// export default connect(mapStateToProps, mapDispatchToProps)(ProfileCover);

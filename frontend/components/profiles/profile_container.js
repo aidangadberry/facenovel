@@ -14,5 +14,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-
-// user: state.users[ownProps.match.params.userUrl]

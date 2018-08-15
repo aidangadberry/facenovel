@@ -20,7 +20,7 @@ class App extends React.Component {
           <div className="main-content-wrapper">
             <Switch>
               <Route path="/:userUrl" component={ProfileContainer} />
-              <Route path="/" component={HomePage} />
+              <Route exact path="/" component={HomePage} />
             </Switch>
           </div>
         </div>
@@ -35,4 +35,4 @@ class App extends React.Component {
   }
 };
 
-export default connect(mapStateToProps, null)(App);
+export default withRouter(connect(mapStateToProps, null)(App));

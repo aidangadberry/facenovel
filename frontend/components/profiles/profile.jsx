@@ -8,13 +8,17 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    return (
-      <div className="profile-container">
-        <ProfileCover user={this.props.user} />
-        <ProfileContent />
-      </div>
-    )
+    if (this.props.user === undefined) {
+      return <div></div>
+    } else {
+      return (
+        <div className="profile-container">
+          <ProfileCover user={this.props.user} />
+          <ProfileContent />
+        </div>
+      )
+    }
+
   }
 }
 
