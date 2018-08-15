@@ -151,7 +151,7 @@ class SignupForm extends React.Component {
                from<br/> us and can opt out any time.
             </p>
           </div>
-          <div>
+          <div className="signup-buttons">
             <input type="submit" value="Sign Up"/>
             <button onClick={this.demoUser}>Demo</button>
           </div>
