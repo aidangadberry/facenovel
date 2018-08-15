@@ -74,3 +74,23 @@
     padding: 0 20px;
   }
 }
+
+.cover-content-right {
+  margin: 10px;
+
+  button {
+    background-color: #f6f7f9;
+    color: #4b4f56;
+    padding: 0 10px;
+    border: 1px solid rgba(0, 0, 0, .4);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 26px;
+
+    &:last-of-type {
+      margin-left: 10px;
+    }
+  }
+}
