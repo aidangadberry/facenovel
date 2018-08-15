@@ -10,7 +10,9 @@ class ProfileContent extends React.Component {
     return (
       <div>
         <div className="content-sidebar">
-          Friends
+          <div className="profile-info">
+            
+          </div>
         </div>
         <div className="content-main">
           <Switch>
