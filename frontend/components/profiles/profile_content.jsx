@@ -7,9 +7,11 @@ import TimelineContent from './timeline_content';
 
 class ProfileContent extends React.Component {
   formatBirthday(birthday) {
-    let birthdayArr = birthday.split("-");
-    birthdayArr.push(birthdayArr.shift());
-    return birthdayArr.join("/")
+    if (birthday !== null) {
+      let birthdayArr = birthday.split("-");
+      birthdayArr.push(birthdayArr.shift());
+      return birthdayArr.join("/")
+    }
   }
 
   render() {
