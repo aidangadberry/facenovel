@@ -42,7 +42,16 @@
     font-weight: bold;
     word-spacing: 3px;
     color: #333;
-    margin-bottom: 22px;
+  }
+
+  #signup-errors {
+    padding-top: 5px;
+    height: 45px;
+    color: red;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "Lucida Grande";
+    word-wrap: normal;
+    width: 300px;
   }
 
   form>div {
@@ -140,4 +149,16 @@
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     cursor: pointer;
   }
+}
+
+.invalid-field {
+  border: 1px solid red;
+}
+
+.error-modal {
+  color: white;
+  border: 1px solid #973438;
+  background-color: #bc4c4c;
+  position: absolute;
+  display: none;
 }

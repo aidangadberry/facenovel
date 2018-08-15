@@ -9,8 +9,11 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(errors) {
-    document.getElementById("login-errors")
-    .appendChild(document.createTextNode(errors.errors.responseJSON))
+    const loginErrors = document.getElementById("login-errors")
+    while (loginErrors.firstChild) {
+      loginErrors.firstChild.remove();
+    }
+    loginErrors.appendChild(document.createTextNode(errors.errors.responseJSON))
   }
 
   handleSubmit(e) {
@@ -44,14 +47,14 @@ class SessionForm extends React.Component {
                 <td>
                   <input
                     type="text"
-                    id="email"
+                    id="login-email"
                     onChange={this.handleChange('email')}
                     />
                 </td>
                 <td>
                   <input
                     type="password"
-                    id="password"
+                    id="login-password"
                     onChange={this.handleChange('password')}
                     />
                 </td>

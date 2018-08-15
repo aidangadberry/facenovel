@@ -10,9 +10,13 @@ class SignupForm extends React.Component {
   }
 
   renderErrors(errors) {
-    document.getElementById("signup-errors")
-    .appendChild(document.createTextNode(errors.errors.responseJSON))
+    const loginErrors = document.getElementById("signup-errors")
+    while (loginErrors.firstChild) {
+      loginErrors.firstChild.remove();
+    }
+    loginErrors.appendChild(document.createTextNode(errors.errors.responseJSON))
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -28,7 +32,10 @@ class SignupForm extends React.Component {
 
   demoUser(e) {
     e.preventDefault();
-    this.props.login({email: "demo@demo.com", password: "123123"});
+    this.props.login({
+      email: "demo@demo.com",
+      password: "123123"
+    });
   }
 
   handleBirthday(field) {
@@ -124,9 +131,8 @@ class SignupForm extends React.Component {
                 name="sex"
                 value="F"
                 onClick={this.handleChange('sex')}
-                id="test1"
                 />
-              <label htmlFor="test1">Female</label>
+              <label>Female</label>
             </span>
             <span>
               <input
@@ -134,9 +140,8 @@ class SignupForm extends React.Component {
                 name="sex"
                 value="M"
                 onClick={this.handleChange('sex')}
-                id="test2"
                 />
-              <label htmlFor="test2">Male</label>
+              <label>Male</label>
             </span>
           </div>
           <div id="terms">

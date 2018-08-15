@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: "demo@demo.com", password: "123123", fname: "Demo");
+User.create(
+  email: "demo@demo.com",
+  password: "123123",
+  fname: "Demo",
+  lname: "Demothy",
+  user_url: "DemoUser"
+);
