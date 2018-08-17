@@ -8,9 +8,6 @@ class ProfileCover extends React.Component {
   }
 
   dropdownContent(friend) {
-    console.log("cover");
-    console.log(this.props);
-    // return ("TEST")
     // a friend request between currentUser and user exists
     if (friend !== null) {
       if (friend.accepted === false) {

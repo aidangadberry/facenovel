@@ -13,7 +13,11 @@ class Api::FriendsController < ApplicationController
        (requesting_id = #{params[:user_id]} AND requested_id = #{params[:current_user_id]})"
      ).first
 
-    render "api/friends/show"
+     if @friend
+      render "api/friends/show"
+    else
+      render json: ["Friend request does not exist"], status: 404
+    end
   end
 
   def create

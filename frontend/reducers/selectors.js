@@ -1,6 +1,4 @@
 export const getUserFromUrl = (state, userUrl) => {
-  console.log("getUserFromUrl");
-  console.log(state, userUrl);
   return state.entities.users[state.entities.userUrls[userUrl]];
 };
 
@@ -12,7 +10,7 @@ export const getRequest = (state, user) => {
   for (var i = 0; i < friendIds.length; i++) {
     let friend = state.entities.friends[friendIds[i]];
     if (friend.requestingId === user.id || friend.requestedId === user.id) return friend;
-  }  
+  }
 
   return null;
 }

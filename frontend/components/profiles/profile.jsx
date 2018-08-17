@@ -10,8 +10,6 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log("profile");
-    console.log(this.props);
     if (this.props.user === undefined) {
       return <div></div>
     } else {
