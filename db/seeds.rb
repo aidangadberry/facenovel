@@ -22,6 +22,7 @@ User.create(
   password: '123123',
   fname: 'Blayne',
   lname: 'Illston',
+  user_url: 'billston',
   birthday: Date.new(1992, 7, 22),
   sex: 'M'
 )
@@ -39,6 +40,7 @@ User.create(
   password: '123123',
   fname: 'Lauren',
   lname: 'Johnson',
+  user_url: 'laurenj',
   birthday: Date.new(1994, 3, 8),
   sex: 'F'
 )
