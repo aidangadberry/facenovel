@@ -23,6 +23,10 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :authored_posts,
+    foreign_key: :author_id,
+    class_name: :Post
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
