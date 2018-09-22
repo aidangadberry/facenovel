@@ -1,4 +1,6 @@
 class Api::PostsController < ApplicationController 
+  before_action :set_post, only: [:show, :update, :destroy]
+
   def index
   end
 
@@ -24,9 +26,27 @@ class Api::PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params)
+
+    if @post.save
+      render "api/posts/show"
+    else
+      render json: @post.errors.full_messages, status: 422
+    end
   end
 
   def update
+    @post = Post.find(params[:id])
+
+    if @post
+      if @post.update(post_params)
+        render "api/posts/show"
+      else
+        render json: @post.errors.full_messages, status: 422
+      end
+    else
+      render json: ["A post with that id does not exist"], status: 404
+    end
   end
 
   def destroy
@@ -34,6 +54,10 @@ class Api::PostsController < ApplicationController
 
   private
 
+  def set_post
+  end
+
   def post_params
+    params.require(:post).permit(:author_id, :body)
   end
 end
