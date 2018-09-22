@@ -76,13 +76,12 @@
 }
 
 .cover-content-right {
-  margin: 12px;
-  display: flex;
+  margin: 10px;
 
   button {
     background-color: #f6f7f9;
     color: #4b4f56;
-    padding: 0;
+    padding: 0 10px;
     border: 1px solid rgba(0, 0, 0, .4);
     border-radius: 2px;
     cursor: pointer;
@@ -92,68 +91,6 @@
 
     &:last-of-type {
       margin-left: 10px;
-    }
-
-    div {
-      padding: 0 10px;
-    }
-  }
-
-  >div {
-    position: relative;
-
-    .friend-dropdown {
-      padding: 8px;
-      display: none;
-      position: absolute;
-      left: 2px;
-
-      .dropdown-arrow {
-        display: none;
-        height: 7px;
-        width: 7px;
-        background-color: white;
-        border-top: 1px solid #8c8c8c;
-        border-left: 1px solid #8c8c8c;
-        transform: rotate(45deg);
-        position: absolute;
-        left: 22px;
-        top: 4px;
-      }
-
-      div {
-        background-color: white;
-        padding: 5px 0;
-        white-space: nowrap;
-        border: 1px solid #8c8c8c;
-        overflow: hidden;
-      }
-
-      button {
-        width: 100%;
-        font-size: 12px;
-        font-weight: normal;
-        margin: 0;
-        padding: 0 22px;
-        color: #000;
-        border: none;
-        background-color: white;
-        border-radius: 0;
-
-        &:hover {
-          background: #4469b0;
-          border: 1px solid #2b497b 0;
-          color: white;
-        }
-      }
-    }
-
-    &:hover .friend-dropdown {
-      display: block;
-    }
-
-    &:hover .dropdown-arrow {
-      display: block;
     }
   }
 }

@@ -1,13 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileNavbar from './profile_navbar';
-import FriendButton from './friend_button';
 
 class ProfileCover extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
@@ -21,8 +16,8 @@ class ProfileCover extends React.Component {
             </div>
           </div>
           <div className="cover-content-right">
-            <FriendButton friend={this.props.friend} user={this.props.user}/>
-            <button><div>Message</div></button>
+            <button>Update Info</button>
+            <button>Message</button>
           </div>
         </div>
         <div>

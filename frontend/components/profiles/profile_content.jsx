@@ -21,7 +21,7 @@ class ProfileContent extends React.Component {
           <div className="profile-info">
             <div>Info</div>
             <div>
-              <i className="fas fa-birthday-cake"></i>
+              <i class="fas fa-birthday-cake"></i>
               {this.formatBirthday(this.props.user.birthday)}
             </div>
           </div>

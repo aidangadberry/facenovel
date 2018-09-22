@@ -4,9 +4,7 @@ import ProfileContent from './profile_content';
 
 class Profile extends React.Component {
   componentDidMount() {
-    this.props.fetchUserByUrl(this.props.userUrl).then(
-      res => this.props.fetchAssociatedRequest(this.props.currentUserId, res.user.id)
-    );
+    this.props.fetchUserByUrl(this.props.userUrl);
   }
 
   render() {
@@ -15,14 +13,7 @@ class Profile extends React.Component {
     } else {
       return (
         <div className="profile-container">
-          <ProfileCover
-            user={this.props.user}
-            currentUserId={this.props.currentUserId}
-            friend={this.props.friend}
-            sendFriendRequest={this.props.sendFriendRequest}
-            approveFriendRequest={this.props.approveFriendRequest}
-            denyFriendRequest={this.props.denyFriendRequest}
-            />
+          <ProfileCover user={this.props.user} />
           <ProfileContent user={this.props.user}/>
         </div>
       )
