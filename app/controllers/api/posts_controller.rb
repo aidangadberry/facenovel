@@ -1,5 +1,4 @@
-class Api::PostsController < ApplicationController 
-  before_action :set_post, only: [:show, :update, :destroy]
+class Api::PostsController < ApplicationController
 
   def index
   end

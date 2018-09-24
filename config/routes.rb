@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get '/users/:user_url', to: 'users#show'
 
     resources :posts, except: [:new, :edit]
-    get '/:user_id/posts', to: 'posts#user_posts'
+    get '/users/:user_id/posts', to: 'posts#user_posts'
   end
 
   root 'static_pages#root'
