@@ -50,12 +50,17 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+
+    if @post
+      @post.delete
+      render "api/posts/show"
+    else
+      render json: ["A post with that id does not exist"], status: 404
+    end
   end
 
   private
-
-  def set_post
-  end
 
   def post_params
     params.require(:post).permit(:author_id, :body)
