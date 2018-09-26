@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create]
     get '/users/:user_url', to: 'users#show'
+    get '/users/:user_id/friends', to: 'users#friends'
 
     resources :posts, except: [:new, :edit]
     get '/users/:user_id/posts', to: 'posts#user_posts'

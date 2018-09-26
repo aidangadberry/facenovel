@@ -8,6 +8,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def friends
+    @users = User.all
+    render "api/users/index"
+  end
+
   def create
     birthday = Date.new(
       params[:user][:birthday][:year].to_i,

@@ -3,4 +3,11 @@ export const findUserByUrl = userUrl => (
     url: `api/users/${userUrl}`,
     method: 'GET'
   })
-)
+);
+
+export const fetchUserFriends = userId => (
+  $.ajax({
+    url: `api/users/${userId}/friends`,
+    method: 'GET'
+  })
+);
