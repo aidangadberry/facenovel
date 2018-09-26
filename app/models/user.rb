@@ -26,7 +26,12 @@ class User < ApplicationRecord
   has_many :authored_posts,
     foreign_key: :author_id,
     class_name: :Post
-
+  
+  def wall_posts
+    Post.where("author_id = ? OR recipient_id = ?", self.id, self.id)
+      .order(created_at: :desc)
+  end
+    
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

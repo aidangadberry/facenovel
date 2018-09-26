@@ -17,7 +17,7 @@ class Api::PostsController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user
-      @posts = @user.authored_posts
+      @posts = @user.wall_posts
       render "api/posts/index"
     else
       render json: ["A user with that id does not exist"], status: 404
