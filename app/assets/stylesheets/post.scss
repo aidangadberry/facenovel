@@ -1,0 +1,51 @@
+.post-container {
+  width: 520px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "Lucida Grande";
+}
+
+.post-header {     
+  a {
+    color: #365899;
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-color: #365899;
+    }
+  }
+
+  i {
+    color: #616770;
+    padding: 0 5px;
+  }
+
+  .date {
+    color: #616770;
+    font-size: 12px;
+    margin-top: 2px;
+    padding-bottom: 6px;
+  }
+}
+
+.post-content {
+  margin-top: 6px;
+  padding-bottom: 12px;
+  color: #1d2129;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
