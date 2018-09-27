@@ -22,10 +22,12 @@ class HomePage extends React.Component {
   }
 
   render() {
-    console.log(this.props.users);
-
     if (Object.keys(this.props.users).length < 2) {
-      return (<div></div>);
+      return (
+        <div className="news-feed">
+          <CreatePostFormContainer />
+        </div>
+      );
     }
     
     return (
