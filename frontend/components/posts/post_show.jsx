@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PostShow extends React.Component {
   componentDidMount() {
@@ -7,11 +8,11 @@ class PostShow extends React.Component {
 
   postRecipient(author, recipient) {
     if (author !== recipient) {
-      return (
-        <span>
-          -> {recipient.fname} {recipient.lname}
-        </span>
-      );
+      return <span>
+        <i className="fas fa-caret-right"></i><Link to={`/${recipient.userUrl}`}>
+            {recipient.fname} {recipient.lname}
+          </Link>
+        </span>;
     }
   }
 
@@ -21,12 +22,21 @@ class PostShow extends React.Component {
     const { author, recipient, post } = this.props;
     
     return (
-      <div>
-        <div>{author.fname} {author.lname} { this.postRecipient(author, recipient) }</div>
-        <div>{post.createdAt}</div>
-        <div>{post.body}</div>
+      <div className="post-container">
+        <div className="post-header">
+          <div>
+            <Link to={`/${author.userUrl}`}>
+              {author.fname} {author.lname}
+            </Link>
+            {this.postRecipient(author, recipient)}
+          </div>
+          <div className="date">{post.createdAt}</div>
+        </div>
+        <div className="post-content">
+          {post.body}
+        </div>
       </div>
-    )
+    );
   }
 }
 

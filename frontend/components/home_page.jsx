@@ -30,8 +30,10 @@ class HomePage extends React.Component {
     
     return (
       <div>
-        <CreatePostFormContainer />
-        <PostShowContainer postId={7} />
+        <div className="news-feed">
+          <CreatePostFormContainer />
+          <PostShowContainer postId={8} />
+        </div>
       </div>
     );
   }

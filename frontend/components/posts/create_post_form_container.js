@@ -4,7 +4,7 @@ import PostForm from './post_form';
 
 const mapStateToProps = state => ({
   post: {body: '', authorId: state.session.currentUserId},
-  formType: 'Create Post'
+  formType: 'Post'
 });
 
 const mapDispatchToProps = dispatch => ({
