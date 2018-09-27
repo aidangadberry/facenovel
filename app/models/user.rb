@@ -28,7 +28,7 @@ class User < ApplicationRecord
     class_name: :Post
   
   def wall_posts
-    Post.where("author_id = ? OR recipient_id = ?", self.id, self.id)
+    Post.where("recipient_id = ?", self.id)
       .order(created_at: :desc)
   end
     

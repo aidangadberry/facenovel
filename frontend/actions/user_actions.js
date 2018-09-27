@@ -17,6 +17,10 @@ export const requestUserFriends = userId => dispatch => (
   ApiUtil.fetchUserFriends(userId).then(res => dispatch(receiveUsers(res)))
 );
 
-export const fetchUserByUrl = userUrl => dispatch => (
-  ApiUtil.findUserByUrl(userUrl).then(res => dispatch(receiveUser(res)))
+export const requestUserByUrl = userUrl => dispatch => (
+  ApiUtil.fetchUserByUrl(userUrl).then(res => dispatch(receiveUser(res)))
+);
+
+export const requestUser = userId => dispatch => (
+  ApiUtil.fetchUser(userId).then(res => dispatch(receiveUser(res)))
 );
