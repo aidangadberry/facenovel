@@ -24,34 +24,40 @@ class MainNavbar extends React.Component {
   }
 
   render() {
-    return (
-      <div className="navbar-container">
+    return <div className="navbar-container">
         <div className="navbar-main">
           <div className="navbar-left">
-            <i className="logo-icon">fn</i>
+            <Link className="logo-icon" to="/"></Link>
             <div className="user-search">
-              <input placeholder="Search"></input>
+              <input placeholder="Search" />
             </div>
           </div>
           <div className="navbar-right">
             <div>
-              <Link to={`/${this.props.currentUser.userUrl}`}>{this.props.currentUser.fname}</Link>
+              <Link to={`/${this.props.currentUser.userUrl}`}>
+                {this.props.currentUser.fname}
+              </Link>
             </div>
             <div>
               <Link to="/">Home</Link>
             </div>
             <div>
-              <a><div className="navbar-friends"></div></a>
-              <a><div className="navbar-messages"></div></a>
-              <a><div className="navbar-notifications"></div></a>
+              <a>
+                <div className="navbar-friends" />
+              </a>
+              <a>
+                <div className="navbar-messages" />
+              </a>
+              <a>
+                <div className="navbar-notifications" />
+              </a>
             </div>
             <div>
-              <a><div className="navbar-help"></div></a>
               <a>
-                <div
-                  className="navbar-settings"
-                  onClick={() => this.openDropdown()}
-                  ></div>
+                <div className="navbar-help" />
+              </a>
+              <a>
+                <div className="navbar-settings" onClick={() => this.openDropdown()} />
               </a>
             </div>
             <div id="dropdown-background" className="dd-background" onClick={() => this.closeDropdown()}>
@@ -61,8 +67,7 @@ class MainNavbar extends React.Component {
             </div>
           </div>
         </div>
-      </div>
-    )
+      </div>;
   }
 }
 
