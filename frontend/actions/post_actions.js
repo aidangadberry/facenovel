@@ -1,12 +1,12 @@
 import * as ApiUtil from '../util/post_api_util';
 
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const RECEIVE_POST_PAYLOAD = 'RECEIVE_POST_PAYLOAD';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 
-const receivePosts = posts => ({
-  type: RECEIVE_POSTS,
-  posts
+const receivePostPayload = postPayload => ({
+  type: RECEIVE_POST_PAYLOAD,
+  postPayload
 });
 
 const receivePost = post => ({
@@ -21,7 +21,7 @@ const removePost = postId => ({
 
 
 export const requestUserPosts = userId => dispatch => (
-  ApiUtil.fetchUserPosts(userId).then(res => dispatch(receivePosts(res)))
+  ApiUtil.fetchUserPosts(userId).then(res => dispatch(receivePostPayload(res)))
 );
 
 export const requestPost = postId => dispatch => (
