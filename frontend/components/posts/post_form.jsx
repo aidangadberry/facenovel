@@ -23,7 +23,7 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <div className="post-form-container">
+      <div className="post-container">
         <div className="post-form-header">
           Make Post
         </div>

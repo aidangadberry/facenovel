@@ -1,7 +1,8 @@
-.post-form-container {
+.post-container {
   width: 500px;
-  background: white;
+  padding: 12px;
   margin-bottom: 10px;
+  background: white;
   border: 1px solid #dddfe2;
   border-radius: 4px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
@@ -17,11 +18,10 @@
   font-size: 12px;
   padding: 8px 12px;
   border-radius: 2px 2px 0 0;
+  margin: -12px -12px 0 -12px;
 }
 
 .post-form-content {
-  padding: 12px;
-
   textarea {
     resize: none;
     width: 100%;
@@ -73,17 +73,6 @@
     line-height: 18px;
     cursor: pointer;
   }
-}
-
-.post-container {
-  width: 500px;
-  padding: 12px;
-  background: white;
-  border: 1px solid #dddfe2;
-  border-radius: 4px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-      "Lucida Grande";
-  box-sizing: border-box;
 }
 
 .post-header {     
