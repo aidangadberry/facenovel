@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   }
   
   return ({
+    userUrls: state.entities.userUrls,
     post: {
       authorId,
       recipientId,
