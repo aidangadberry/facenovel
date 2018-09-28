@@ -1,4 +1,5 @@
 require_relative 'boot'
+require_relative "../app/middlewares/snake_case_parameters"
 
 require 'rails/all'
 
@@ -15,5 +16,7 @@ module Facenovel
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.serve_static_assets = true
+
+    config.middleware.use SnakeCaseParameters
   end
 end

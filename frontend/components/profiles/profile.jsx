@@ -4,7 +4,13 @@ import ProfileContent from './profile_content';
 
 class Profile extends React.Component {
   componentDidMount() {
-    this.props.fetchUserByUrl(this.props.userUrl);
+    this.props.requestUserByUrl(this.props.userUrl);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.userUrl !== this.props.match.params.userUrl) {
+      this.props.requestUserByUrl(this.props.userUrl);
+    }
   }
 
   render() {

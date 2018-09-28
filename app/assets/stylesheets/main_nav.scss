@@ -19,8 +19,14 @@
   display: flex;
   align-items: center;
 
-  i {
-    padding: 10px;
+  .logo-icon {
+    background-image: image_url("icon.png");
+    // background-image: image_url("profile.png");
+    background-size: cover;
+    background-position: center center;
+    height: 24px;
+    width: 24px;
+    margin: 10px;
   }
 }
 

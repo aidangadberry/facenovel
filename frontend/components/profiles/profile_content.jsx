@@ -1,9 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import TimelineContent from './timeline_content';
-// import AboutContent from './about_content';
-// import FriendsContent from './friends_content';
-// import PhotosContent from './photos_content';
 
 class ProfileContent extends React.Component {
   formatBirthday(birthday) {
@@ -16,12 +13,12 @@ class ProfileContent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="profile-content">
         <div className="content-sidebar">
           <div className="profile-info">
             <div>Info</div>
             <div>
-              <i class="fas fa-birthday-cake"></i>
+              <i className="fas fa-birthday-cake"></i>
               {this.formatBirthday(this.props.user.birthday)}
             </div>
           </div>
@@ -35,9 +32,5 @@ class ProfileContent extends React.Component {
     )
   }
 }
-
-// <Route path="/:user/about" component={AboutContent} />
-// <Route path="/:user/friends" component={FriendsContent} />
-// <Route path="/:user/photos" component={PhotosContent} />
 
 export default ProfileContent;

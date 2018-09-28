@@ -1,0 +1,108 @@
+.post-container {
+  width: 500px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: white;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "Lucida Grande";
+  box-sizing: border-box;
+}
+
+.post-form-header {
+  background: #f5f6f7;
+  border-bottom: 1px solid #dddfe2;
+  color: #4b4f56;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 2px 2px 0 0;
+  margin: -12px -12px 0 -12px;
+}
+
+.post-form-content {
+  textarea {
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: none;
+    padding: 24px 48px 0 12px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    color: white;
+    font-weight: bold;
+    background-color: #4267b2;
+    border: 1px solid #29487d;
+    border-radius: 2px;
+    padding: 4px 8px;
+    margin: 0 0 0 auto;
+    
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3b5998;
+    }
+  }
+}
+
+.login-button {
+  background-color: #4267b2;
+  border: 1px solid #29487d;
+  border-radius: 2px;
+  padding: 0px 7px 4px 7px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #3b5998;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 12px;
+    padding: 0;
+    line-height: 18px;
+    cursor: pointer;
+  }
+}
+
+.post-header {     
+  a {
+    color: #365899;
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-color: #365899;
+    }
+  }
+
+  i {
+    color: #616770;
+    padding: 0 5px;
+  }
+
+  .date {
+    color: #616770;
+    font-size: 12px;
+    margin-top: 2px;
+    padding-bottom: 6px;
+  }
+}
+
+.post-content {
+  margin-top: 6px;
+  padding-bottom: 12px;
+  color: #1d2129;
+  font-size: 14px;
+}

@@ -1,8 +1,7 @@
 .profile-container {
   position: relative;
-  width: 851px;
+  width: 850px;
   margin: 0 auto;
-  left: -65px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
       "Lucida Grande";
 }
@@ -95,15 +94,25 @@
   }
 }
 
-.content-sidebar {
+.profile-content {
   margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.content-sidebar {
+  margin-right: 10px;
   background-color: white;
   border: 1px solid #dddfe2;
   border-radius: 3px;
-  width: 321px;
+  width: 314px;
   padding: 12px;
 }
 
 .profile-info {
 
+}
+
+.content-main {
+  
 }
