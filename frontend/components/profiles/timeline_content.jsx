@@ -1,6 +1,6 @@
 import React from 'react';
-// import CreateWallPostContainer from '../posts/create_wall_post_container';
-// import UserPostsIndex from '../posts/user_posts_index';
+import CreatePostFormContainer from '../posts/create_post_form_container';
+import PostIndexContainer from '../posts/post_index_container';
 
 class TimelineContent extends React.Component {
   componentDidMount() {
@@ -10,11 +10,11 @@ class TimelineContent extends React.Component {
   render() {
     return (
       <div>
+        <CreatePostFormContainer />
+        <PostIndexContainer />
       </div>
     )
   }
 }
-// <CreateWallPostContainer />
-// <UserPostsIndex userUrl={this.props.match.params.userUrl} />
 
 export default TimelineContent;
