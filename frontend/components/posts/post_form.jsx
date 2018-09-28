@@ -13,7 +13,12 @@ class PostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+
+    // make sure the post body isn't just whitespace
+    if ((/\S+/).test(this.state.body)) {
+      this.props.action(this.state);
+      this.setState({body: ""});
+    }
   }
 
   render() {

@@ -34,7 +34,7 @@ class PostIndex extends React.Component {
     return (
       <div className="post-list">
         <ul>
-          {posts}
+          {posts.reverse()}
         </ul>
       </div>
     )
