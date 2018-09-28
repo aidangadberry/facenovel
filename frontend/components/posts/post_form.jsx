@@ -10,6 +10,7 @@ class PostForm extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.userUrl !== this.props.match.params.userUrl) {
       const url = this.props.match.params.userUrl;
+      let recipientId;
       
       if (url === undefined) {
         recipientId = authorId;
