@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { fetchUserByUrl } from '../../actions/user_actions';
+import { requestUserByUrl } from '../../actions/user_actions';
 import Profile from './profile';
 import { getUserFromUrl } from '../../reducers/selectors';
 
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserByUrl: url => dispatch(fetchUserByUrl(url))
+  requestUserByUrl: url => dispatch(requestUserByUrl(url))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
