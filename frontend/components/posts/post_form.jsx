@@ -7,6 +7,20 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.userUrl !== this.props.match.params.userUrl) {
+      const url = this.props.match.params.userUrl;
+      
+      if (url === undefined) {
+        recipientId = authorId;
+      } else {
+        recipientId = this.props.userUrls[url];
+      }
+      
+      this.setState({recipientId});
+    }
+  }
+
   handleChange(field) {
     return e => this.setState({[field]: e.target.value})
   }
