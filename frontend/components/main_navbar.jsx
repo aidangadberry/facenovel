@@ -43,33 +43,34 @@ class MainNavbar extends React.Component {
             </div>
             <div>
               <a>
-                <div className="navbar-friends" />
-              </a>
-              <a>
-                <div className="navbar-messages" />
-              </a>
-              <a>
-                <div className="navbar-notifications" />
-              </a>
-            </div>
-            <div>
-              <a>
-                <div className="navbar-help" />
-              </a>
-              <a>
                 <div className="navbar-settings" onClick={() => this.openDropdown()} />
               </a>
             </div>
             <div id="dropdown-background" className="dd-background" onClick={() => this.closeDropdown()}>
-              <div id="settings" className="settings-dropdown">
-                <button onClick={() => this.props.logout()}>Log Out</button>
-              </div>
+            </div>
+            <div id="settings" className="dropdown-box">
+              <button onClick={() => this.props.logout()}>Log Out</button>
             </div>
           </div>
         </div>
       </div>;
   }
 }
+
+/* <div>
+  <a>
+    <div className="navbar-friends" />
+  </a>
+  <a>
+    <div className="navbar-messages" />
+  </a>
+  <a>
+    <div className="navbar-notifications" />
+  </a>
+  <a>
+    <div className="navbar-help" />
+  </a>
+</div> */
 
   // <Link to={`/${this.props.currentUser.userUrl}`}>{this.props.currentUser.fname}</Link>
 
