@@ -14,6 +14,7 @@ class PostIndex extends React.Component {
 
   render() {
     let posts = [];
+
     for (let postId in this.props.posts) {
       const post = this.props.posts[postId];
       const author = this.props.users[post.authorId];
