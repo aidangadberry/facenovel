@@ -1,8 +1,6 @@
 # Facenovel
 
-Facenovel is a Facebook clone that lets you create an account, add friends, and
-view their profiles. In the future, you will be able to create posts, post on
-your friends' walls, and comment on posts!
+Facenovel is a Facebook clone that lets you create an account to post your thoughts on friends' walls. In the future, you will be able to comment on posts, like posts, and upload pictures!
 
 [Live Site](https://facenovel.herokuapp.com/#/)
 
@@ -81,9 +79,8 @@ export const denyFriendRequest = friendId => (
 
 ## Features
 
-As of now, all you can do on Facenovel is grow your network. Once you create an
-account, you are able to add friends, respond to friend requests, and view their
-profiles.
+As of now, all you can do on Facenovel is create posts with friends. Once you create an
+account, you are able to add friends, view their profiles, and share your thoughts.
 
 ### Signup Page
 
