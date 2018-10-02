@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import EditPostFormContainer from '../posts/edit_post_form_container';
 import { hideModal } from '../../actions/ui_actions';
+import { deletePost } from '../../actions/post_actions';
 
 const mapStateToProps = state => ({
   modalType: state.ui.modal.modalType,
@@ -9,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  hideModal: () => dispatch(hideModal())
+  hideModal: () => dispatch(hideModal()),
+  deletePost: postId => dispatch(deletePost(postId))
 });
 
 class PostModal extends React.Component {
@@ -35,12 +37,22 @@ class PostModal extends React.Component {
       return (
         <div className="post-modal show-modal">
           <div className="post-modal-content">
-            <div className="post-header">
-              <h1>Delete Post</h1>
-            </div>
             <span className="close-button" onClick={() => this.props.hideModal()}>&times;</span>
-            <button>Yes</button>
-            <button>No</button>
+            <div className="post-container">
+              <div className="post-form-header">
+                Delete Post
+              </div>
+              <div className="post-form-content">
+                Deleting this post will remove it from your timeline. This action cannot be undone.
+                <div className="post-footer">
+                  <button onClick={() => this.props.hideModal()}>Cancel</button>
+                  <button onClick={() => {
+                    this.props.deletePost(this.props.modalProps.id);
+                    this.props.hideModal()
+                  }}>Delete</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       );

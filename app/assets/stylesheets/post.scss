@@ -22,13 +22,16 @@
 }
 
 .post-form-content {
+  font-size: 14px;
+  padding-top: 12px;
+
   textarea {
     resize: none;
     width: 100%;
     box-sizing: border-box;
     font-size: 14px;
     border: none;
-    padding: 24px 48px 0 12px;
+    padding: 12px 48px 0 12px;
 
     &:focus {
       outline: none;
@@ -42,13 +45,35 @@
     border: 1px solid #29487d;
     border-radius: 2px;
     padding: 4px 8px;
-    margin: 0 0 0 auto;
+    margin-left: auto;
     
     display: block;
     cursor: pointer;
 
     &:hover {
       background-color: #3b5998;
+    }
+  }
+
+  .post-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #dddfe2;
+    padding-top: 12px;
+    margin-top: 12px;
+
+    button {
+      margin-left: 4px;
+
+      &:first-of-type {
+        color: #4b4f56;
+        background-color: #f5f6f7;
+        border-color: #ccd0d5;
+
+        &:hover {
+          background-color: #ebedf0;
+        }
+      }
     }
   }
 }
@@ -185,16 +210,18 @@
 }
 
 .close-button {
+  color: #bec2c9;
+  margin: 7px;
+  font-size: 18px;
   float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
+  width: 15px;
+  line-height: 15px;
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: lightgray;
 }
 .close-button:hover {
-  background-color: darkgray;
+  color: #9ea3ae;
 }
 .show-modal {
   opacity: 1;
