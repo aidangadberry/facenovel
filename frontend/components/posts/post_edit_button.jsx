@@ -1,17 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { showModal } from '../../actions/ui_actions';
 
 const mapStateToProps = state => ({
   currentUserId: state.session.currentUserId
 })
 
+const mapDispatchToProps = dispatch => ({
+  showModal: (modalType, modalProps) => dispatch(showModal(modalType, modalProps))
+})
+
 class PostEditButton extends React.Component {
-  openDropdown() {
+  openDropdown(e) {
+    console.log(e);
     document.getElementById("edit").classList.add("edit-dropdown-visible");
     document.getElementById("edit-dropdown-background").classList.add("edit-dropdown-visible");
   }
 
-  closeDropdown() {
+  closeDropdown(e) {
     document.getElementById("edit").classList.remove("edit-dropdown-visible");
     document.getElementById("edit-dropdown-background").classList.remove("edit-dropdown-visible");
   }
@@ -22,14 +28,20 @@ class PostEditButton extends React.Component {
     if (post.authorId === currentUserId) {
       return (
         <div className="edit-dropdown">
-          <div className="edit-button" onClick={() => this.openDropdown()}>
+          <div className="edit-button" onClick={e => this.openDropdown(e)}>
             <i className="fas fa-ellipsis-h" />
           </div>
-          <div id="edit-dropdown-background" className="dd-background" onClick={() => this.closeDropdown()}>
+          <div id="edit-dropdown-background" className="dd-background" onClick={e => this.closeDropdown(e)}>
           </div>
           <div id="edit" className="dropdown-box">
-            <button>Edit</button><br/>
-            <button>Delete</button>
+            <button onClick={() => {
+              this.closeDropdown();
+              this.props.showModal('edit', post);
+            }}>Edit</button><br/>
+            <button onClick={() => {
+              this.closeDropdown();
+              this.props.showModal('delete', post);
+            }}>Delete</button>
           </div>
         </div>
       );
@@ -50,4 +62,4 @@ class PostEditButton extends React.Component {
     <button onClick={() => this.props.logout()}>Log Out</button>
   </div> */
 
-export default connect(mapStateToProps, null)(PostEditButton);
+export default connect(mapStateToProps, mapDispatchToProps)(PostEditButton);

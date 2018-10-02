@@ -136,6 +136,11 @@
     margin-top: 2px;
     padding-bottom: 6px;
   }
+
+  >div {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .post-content {
@@ -160,6 +165,10 @@
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 
+.modal-header {
+  margin: 5px;
+}
+
 .post-modal-content {
   position: absolute;
   top: 30%;
@@ -167,9 +176,12 @@
   transform: translate(-50%, -50%);
   background-color: white;
   box-shadow: 0 2px 26px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .1);
-  padding: 15px;
-  width: 25rem;
   border-radius: 3px;
+  margin-bottom: -10px;
+
+  div {
+    margin-bottom: 0;
+  }
 }
 
 .close-button {
