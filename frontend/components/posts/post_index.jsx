@@ -3,12 +3,12 @@ import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
   componentDidMount() {
-    this.props.requestUserPosts(this.props.userId)
+    this.props.requestWallPosts(this.props.userId)
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.userUrl !== this.props.match.params.userUrl) {
-      this.props.requestUserPosts(this.props.userId);
+      this.props.requestWallPosts(this.props.userId);
     }
   }
 
