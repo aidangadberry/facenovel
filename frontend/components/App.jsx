@@ -5,6 +5,7 @@ import LandingPage from './session/landing_page';
 import MainNavbar from './main_navbar';
 import HomePage from './home_page';
 import ProfileContainer from './profiles/profile_container';
+import PostModal from './ui/post_modal';
 
 class App extends React.Component {
 
@@ -18,6 +19,7 @@ class App extends React.Component {
             <ProtectedRoute path="/:userUrl" component={ProfileContainer} />
             <ProtectedRoute path="/" component={HomePage} />
           </Switch>
+          <PostModal />
         </div>
       </div>
     )

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class PostForm extends React.Component {
     if ((/\S+/).test(this.state.body)) {
       this.props.action(this.state);
       this.setState({body: ""});
+      if (this.props.hideModal) this.props.hideModal();
     }
   }
 
@@ -40,7 +42,7 @@ class PostForm extends React.Component {
     return (
       <div className="post-container">
         <div className="post-form-header">
-          Make Post
+          {this.props.formType}
         </div>
         <div className="profile-picture thumbnail" />
         <div className="post-form-content">
@@ -50,7 +52,7 @@ class PostForm extends React.Component {
               onChange={this.handleChange('body')}
               placeholder="What's on your mind?"
               />
-            <button>{this.props.formType}</button>
+            <button>{this.props.formButtonText}</button>
           </form>
         </div>
       </div>
@@ -58,4 +60,4 @@ class PostForm extends React.Component {
   }
 }
 
-export default PostForm;
+export default withRouter(PostForm);

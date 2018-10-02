@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostEditButton from './post_edit_button';
 
 class PostIndexItem extends React.Component {
   postRecipient(author, recipient) {
@@ -19,10 +20,13 @@ class PostIndexItem extends React.Component {
       <div className="post-container">
         <div className="post-header">
           <div>
-            <Link to={`/${author.userUrl}`}>
-              {author.fname} {author.lname}
-            </Link>
-            {this.postRecipient(author, recipient)}
+            <div>
+              <Link to={`/${author.userUrl}`}>
+                {author.fname} {author.lname}
+              </Link>
+              {this.postRecipient(author, recipient)}
+            </div>
+            <PostEditButton post={post} />
           </div>
           <div className="date">{post.createdAt}</div>
         </div>
