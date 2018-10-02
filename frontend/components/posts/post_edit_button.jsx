@@ -12,14 +12,21 @@ const mapDispatchToProps = dispatch => ({
 
 class PostEditButton extends React.Component {
   openDropdown(e) {
-    console.log(e);
-    document.getElementById("edit").classList.add("edit-dropdown-visible");
-    document.getElementById("edit-dropdown-background").classList.add("edit-dropdown-visible");
+    document
+      .getElementById(`post-dropdown-${this.props.post.id}`)
+      .classList.add("edit-dropdown-visible");
+    document
+      .getElementById(`post-background-${this.props.post.id}`)
+      .classList.add("edit-dropdown-visible");
   }
 
   closeDropdown(e) {
-    document.getElementById("edit").classList.remove("edit-dropdown-visible");
-    document.getElementById("edit-dropdown-background").classList.remove("edit-dropdown-visible");
+    document
+      .getElementById(`post-dropdown-${this.props.post.id}`)
+      .classList.remove("edit-dropdown-visible");
+    document
+      .getElementById(`post-background-${this.props.post.id}`)
+      .classList.remove("edit-dropdown-visible");
   }
   
   render() {
@@ -31,9 +38,9 @@ class PostEditButton extends React.Component {
           <div className="edit-button" onClick={e => this.openDropdown(e)}>
             <i className="fas fa-ellipsis-h" />
           </div>
-          <div id="edit-dropdown-background" className="dd-background" onClick={e => this.closeDropdown(e)}>
+          <div id={`post-background-${post.id}`} className="dd-background" onClick={e => this.closeDropdown(e)}>
           </div>
-          <div id="edit" className="dropdown-box">
+          <div id={`post-dropdown-${post.id}`} className="dropdown-box">
             <button onClick={() => {
               this.closeDropdown();
               this.props.showModal('edit', post);
