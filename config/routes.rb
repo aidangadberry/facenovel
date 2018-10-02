@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     resources :posts, except: [:new, :edit]
     get '/users/:user_id/posts', to: 'posts#wall_posts'
+    get '/users/:user_id/feed', to: 'posts#feed_posts'
   end
 
   root 'static_pages#root'

@@ -20,6 +20,17 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def feed_posts
+    @user = User.find(params[:user_id])
+
+    if @user
+      @posts = @user.feed_posts
+      render "api/posts/index"
+    else
+      render json: ["A post with that id does not exist"], status: 404
+    end
+  end
+
   def create
     @post = Post.new(post_params)
 
