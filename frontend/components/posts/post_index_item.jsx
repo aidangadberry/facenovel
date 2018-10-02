@@ -20,10 +20,12 @@ class PostIndexItem extends React.Component {
       <div className="post-container">
         <div className="post-header">
           <div>
-            <Link to={`/${author.userUrl}`}>
-              {author.fname} {author.lname}
-            </Link>
-            {this.postRecipient(author, recipient)}
+            <div>
+              <Link to={`/${author.userUrl}`}>
+                {author.fname} {author.lname}
+              </Link>
+              {this.postRecipient(author, recipient)}
+            </div>
             <PostEditButton post={post} />
           </div>
           <div className="date">{post.createdAt}</div>

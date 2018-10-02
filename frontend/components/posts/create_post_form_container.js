@@ -21,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
       recipientId,
       body: '' 
     },
-    formType: 'Post'
+    formType: 'Make Post',
+    formButtonText: 'Post'
   });
 };
 
