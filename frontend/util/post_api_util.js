@@ -3,8 +3,13 @@ export const fetchPost = postId => $.ajax({
   method: 'GET'
 });
 
-export const fetchUserPosts = userId => $.ajax({
+export const fetchWallPosts = userId => $.ajax({
   url: `api/users/${userId}/posts`,
+  method: 'GET'
+});
+
+export const fetchFeedPosts = userId => $.ajax({
+  url: `api/users/${userId}/feed`,
   method: 'GET'
 });
 

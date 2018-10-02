@@ -19,13 +19,16 @@ const removePost = postId => ({
   postId
 });
 
-
-export const requestUserPosts = userId => dispatch => (
-  ApiUtil.fetchUserPosts(userId).then(res => dispatch(receivePostPayload(res)))
+export const requestPost = postId => dispatch =>
+  ApiUtil.fetchPost(postId).then(res => dispatch(receivePost(res))
 );
 
-export const requestPost = postId => dispatch => (
-  ApiUtil.fetchPost(postId).then(res => dispatch(receivePost(res)))
+export const requestWallPosts = userId => dispatch => (
+  ApiUtil.fetchWallPosts(userId).then(res => dispatch(receivePostPayload(res)))
+);
+
+export const requestFeedPosts = userId => dispatch => (
+  ApiUtil.fetchFeedPosts(userId).then(res => dispatch(receivePostPayload(res)))
 );
 
 export const createPost = post => dispatch => (

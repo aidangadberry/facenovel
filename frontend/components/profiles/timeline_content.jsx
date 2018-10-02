@@ -1,6 +1,6 @@
 import React from 'react';
 import CreatePostFormContainer from '../posts/create_post_form_container';
-import PostIndexContainer from '../posts/post_index_container';
+import WallPostsContainer from '../posts/wall_posts_container';
 
 class TimelineContent extends React.Component {
   componentDidMount() {
@@ -11,7 +11,7 @@ class TimelineContent extends React.Component {
     return (
       <div>
         <CreatePostFormContainer />
-        <PostIndexContainer />
+        <WallPostsContainer />
       </div>
     )
   }

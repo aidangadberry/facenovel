@@ -31,6 +31,11 @@ class User < ApplicationRecord
     Post.where("recipient_id = ?", self.id)
       .order(created_at: :desc)
   end
+
+  def feed_posts
+    # return all posts for now, change when friends feature is implemented
+    Post.all
+  end
     
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
