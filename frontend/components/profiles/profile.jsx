@@ -19,7 +19,11 @@ class Profile extends React.Component {
     } else {
       return (
         <div className="profile-container">
-          <ProfileCover user={this.props.user} />
+          <ProfileCover 
+            currentUserId={this.props.currentUserId} 
+            user={this.props.user} 
+            updatePhoto={this.props.updatePhoto}
+            />
           <ProfileContent user={this.props.user}/>
         </div>
       )

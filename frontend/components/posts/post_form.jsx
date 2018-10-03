@@ -44,7 +44,6 @@ class PostForm extends React.Component {
         <div className="post-form-header">
           {this.props.formType}
         </div>
-        <div className="profile-picture thumbnail" />
         <div className="post-form-content">
           <form onSubmit={this.handleSubmit}>
             <textarea 
