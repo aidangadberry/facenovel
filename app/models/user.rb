@@ -26,6 +26,9 @@ class User < ApplicationRecord
   has_many :authored_posts,
     foreign_key: :author_id,
     class_name: :Post
+
+  has_one_attached :profile_picture
+  has_one_attached :cover_photo
   
   def wall_posts
     Post.where("recipient_id = ?", self.id)

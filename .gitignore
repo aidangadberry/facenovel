@@ -5,3 +5,5 @@
 bundle.js
 bundle.js.map
 .DS_Store
+# Ignore master key for decrypting credentials and more.
+/config/master.key
