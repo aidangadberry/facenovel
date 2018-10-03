@@ -42,11 +42,25 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update_photo
+    @user = User.find(params[:user_id])
+
+    if @user
+      if @user.update(user_params)
+        render "api/users/show"
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+    else
+      render json: ["A user with that id does not exist"], status: 404
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(
-      :email, :fname, :lname, :user_url, :sex, :password
+      :email, :fname, :lname, :user_url, :sex, :password, :profile_picture, :cover_photo
     )
   end
 end

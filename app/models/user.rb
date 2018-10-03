@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token, :ensure_user_url
+  before_create :attach_default_photos
 
   attr_reader :password
 
@@ -29,6 +30,18 @@ class User < ApplicationRecord
 
   has_one_attached :profile_picture
   has_one_attached :cover_photo
+
+  def attach_default_photos
+    self.profile_picture.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'generic-pic.png')), 
+      filename: 'generic-pic.png', content_type: 'image/png'
+    )
+
+    self.cover_photo.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'profile.png')), 
+      filename: 'profile.png', content_type: 'image/png'
+    )
+  end
   
   def wall_posts
     Post.where("recipient_id = ?", self.id)

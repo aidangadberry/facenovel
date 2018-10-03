@@ -24,3 +24,7 @@ export const requestUserByUrl = userUrl => dispatch => (
 export const requestUser = userId => dispatch => (
   ApiUtil.fetchUser(userId).then(res => dispatch(receiveUser(res)))
 );
+
+export const updatePhoto = (userId, photoData) => dispatch => (
+  ApiUtil.updatePhoto(userId, photoData).then(res => dispatch(receiveUser(res)))
+);
