@@ -33,13 +33,13 @@ class User < ApplicationRecord
 
   def attach_default_photos
     self.profile_picture.attach(
-      io: File.open(Rails.root.join('app', 'assets', 'images', 'generic-pic.png')), 
-      filename: 'generic-pic.png', content_type: 'image/png'
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'profile.png')), 
+      filename: 'profile.png', content_type: 'image/png'
     )
 
     self.cover_photo.attach(
-      io: File.open(Rails.root.join('app', 'assets', 'images', 'profile.png')), 
-      filename: 'profile.png', content_type: 'image/png'
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'cover.jpg')), 
+      filename: 'cover.jpg', content_type: 'image/png'
     )
   end
   
