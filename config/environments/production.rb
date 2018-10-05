@@ -38,8 +38,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-  # Store uploaded files on the AWS dev bucket
-  config.active_storage.service = :amazon_dev
+  # Store uploaded files on the AWS production bucket
+  config.active_storage.service = :amazon_prod
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
