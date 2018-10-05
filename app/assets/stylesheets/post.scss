@@ -27,7 +27,7 @@
 
   textarea {
     resize: none;
-    width: 100%;
+    width: calc(100% - 45px);
     box-sizing: border-box;
     font-size: 14px;
     border: none;
@@ -100,7 +100,9 @@
   }
 }
 
-.post-header {     
+.post-header {
+  // display: flex;
+
   a {
     color: #365899;
     font-size: 14px;
@@ -168,8 +170,19 @@
   }
 }
 
+.post-thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 5px;
+  background-size: cover;
+  background-position: center center;
+  image-rendering: auto;
+  float: left;
+}
+
 .post-content {
-  margin-top: 6px;
+  margin-top: 10px;
   padding-bottom: 12px;
   color: #1d2129;
   font-size: 14px;

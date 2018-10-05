@@ -36,10 +36,22 @@
   align-items: center;
   position: relative;
 
+  .navbar-thumbnail {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    margin-right: 8px;
+    background-size: cover;
+    background-position: center center;
+    image-rendering: auto;
+    float: left;
+  }
+
   a {
     padding: 4px;
     margin: 0 2px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #FFF;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
@@ -55,7 +67,18 @@
       background-size: 29px 1411px;
       background-image: image_url("icons.png");
 
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 
+  .navbar-link {
+    height: 24px;
+
+    &:hover {
+      background-color: #3d5e9e;
+      border-radius: 2px;
     }
   }
 

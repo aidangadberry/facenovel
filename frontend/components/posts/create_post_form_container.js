@@ -22,7 +22,8 @@ const mapStateToProps = (state, ownProps) => {
       body: '' 
     },
     formType: 'Make Post',
-    formButtonText: 'Post'
+    formButtonText: 'Post',
+    author: state.entities.users[authorId]
   });
 };
 

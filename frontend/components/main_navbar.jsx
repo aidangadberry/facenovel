@@ -24,6 +24,8 @@ class MainNavbar extends React.Component {
   }
 
   render() {
+    const user = this.props.currentUser;
+    
     return <div className="navbar-container">
         <div className="navbar-main">
           <div className="navbar-left">
@@ -34,12 +36,13 @@ class MainNavbar extends React.Component {
           </div>
           <div className="navbar-right">
             <div>
-              <Link to={`/${this.props.currentUser.userUrl}`}>
-                {this.props.currentUser.fname}
+              <Link className="navbar-link" to={`/${user.userUrl}`}>
+                <span className="navbar-thumbnail" style={{ backgroundImage: `url(${user.profilePictureUrl})` }} />
+                {user.fname}
               </Link>
             </div>
             <div>
-              <Link to="/">Home</Link>
+              <Link className="navbar-link" to="/">Home</Link>
             </div>
             <div>
               <a>

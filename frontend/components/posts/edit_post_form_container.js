@@ -6,7 +6,8 @@ import PostForm from './post_form';
 const mapStateToProps = (state, ownProps) => ({
   post: ownProps.post,
   formType: 'Edit Post',
-  formButtonText: 'Save'
+  formButtonText: 'Save',
+  author: state.entities.users[ownProps.post.authorId]
 });
 
 const mapDispatchToProps = dispatch => ({

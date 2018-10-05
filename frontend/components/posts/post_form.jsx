@@ -39,19 +39,22 @@ class PostForm extends React.Component {
   }
 
   render() {
+    const { formType, formButtonText, author } = this.props;
+    
     return (
       <div className="post-container">
         <div className="post-form-header">
-          {this.props.formType}
+          {formType}
         </div>
         <div className="post-form-content">
+          <span className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }} />
           <form onSubmit={this.handleSubmit}>
             <textarea 
               value={this.state.body}
               onChange={this.handleChange('body')}
               placeholder="What's on your mind?"
               />
-            <button>{this.props.formButtonText}</button>
+            <button>{formButtonText}</button>
           </form>
         </div>
       </div>
