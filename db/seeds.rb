@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.find_by(email: "demo@demo.com").delete if (User.find_by(email: "demo@demo.com"))
 User.create(
   email: "demo@demo.com",
   password: "123123",
@@ -14,3 +13,43 @@ User.create(
   user_url: "DemoUser",
   birthday: Date.new(1985, 7, 12)
 )
+
+users = [
+  ["jrrt", "123123", "J. R. R.", "Tolkien", "ringl0rd", "M", Date.new(1892, 1, 3)],
+  ["rayb", "123123", "Ray", "Bradbury", "451burnit", "M", Date.new(1920, 8, 22)],
+  ["charlesd", "123123", "Charles", "Dickens", "chuckyd", "M", Date.new(1812, 2, 7)],
+  ["hlee", "123123", "Harper", "Lee", "harperlee", "F", Date.new(1926, 4, 28)],
+  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)]
+]
+
+users.map! do |email, pw, fn, ln, url, sex, bday|
+  User.create(
+    email: email, password: pw, fname: fn, lname: ln, 
+    user_url: url, sex: sex, birthday: bday
+  )
+end
+
+users.each do |user|
+  user.profile_picture.attach(
+    io: File.open(Rails.root.join("app", "assets", "images", "seeds", "#{user.email}_profile.jpg")), 
+    filename: "#{user.email}_profile.jpg", content_type: "image/jpg"
+  )
+
+  user.cover_photo.attach(
+    io: File.open(Rails.root.join("app", "assets", "images", "seeds", "#{user.email}_cover.jpg")), 
+    filename: "#{user.email}_cover.jpg", content_type: "image/jpg"
+  )
+end
+
+posts = [
+  [users[0].id, users[0].id, Date.new(2018, 9, 30), 
+   "Can anyone translate some elvish for me?"],
+  [users[1].id, users[0].id, Date.new(2018, 8, 2),
+   "Hey man, loved the trilogy. What a great read!"]
+]
+
+posts.map! do |a_id, r_id, cta, body|
+  Post.create(
+    author_id: a_id, recipient_id: r_id, body: body, created_at: cta
+  )
+end
