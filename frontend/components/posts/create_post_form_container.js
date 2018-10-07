@@ -23,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
     },
     formType: 'Make Post',
     formButtonText: 'Post',
-    author: state.entities.users[authorId]
+    author: state.entities.users[authorId],
+    recipient: state.entities.users[recipientId]
   });
 };
 

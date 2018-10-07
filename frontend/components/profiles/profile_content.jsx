@@ -15,9 +15,9 @@ class ProfileContent extends React.Component {
     return (
       <div className="profile-content">
         <div className="content-sidebar">
-          <div className="profile-info">
-            <div>Info</div>
-            <div>
+          <div className="profile-intro">
+            <div className="intro-header">Intro</div>
+            <div className="intro-content">
               <i className="fas fa-birthday-cake"></i>
               {this.formatBirthday(this.props.user.birthday)}
             </div>

@@ -10,6 +10,7 @@
   background-image: image_url("cover.jpg");
   background-size: cover;
   background-position: center center;
+  background-origin: border-box;
   height: 313px;
   border: 1px solid rgba(0, 0, 0, .25);
   border-top: 0;
@@ -24,6 +25,7 @@
   margin-left: 201px;
   padding-bottom: 10px;
   font-size: 24px;
+  text-shadow: 0 0 3px rgba(0,0,0,.8)
 }
 
 .profile-photo-container {
@@ -145,8 +147,23 @@
   padding: 12px;
 }
 
-.profile-info {
+.profile-intro {
+  color: #1d2129;
 
+  .intro-header {
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ebedf0;
+  }
+
+  .intro-content {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  
+  i {
+    padding-right: 5px;
+  }
 }
 
 .content-main {

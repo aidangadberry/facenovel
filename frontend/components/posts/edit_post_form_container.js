@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
   post: ownProps.post,
   formType: 'Edit Post',
   formButtonText: 'Save',
-  author: state.entities.users[ownProps.post.authorId]
+  author: state.entities.users[ownProps.post.authorId],
+  recipient: state.entities.users[ownProps.post.recipientId]
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -38,6 +38,14 @@ class PostForm extends React.Component {
     }
   }
 
+  placeholderText() {
+    if (this.state.authorId === this.state.recipientId) {
+      return `What's on your mind, ${this.props.author.fname}?`;
+    } else {
+      return `Write something to ${this.props.recipient.fname}...`
+    }
+  }
+
   render() {
     const { formType, formButtonText, author } = this.props;
     
@@ -52,7 +60,7 @@ class PostForm extends React.Component {
             <textarea 
               value={this.state.body}
               onChange={this.handleChange('body')}
-              placeholder="What's on your mind?"
+              placeholder={this.placeholderText()}
               />
             <button>{formButtonText}</button>
           </form>
