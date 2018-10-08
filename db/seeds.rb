@@ -42,10 +42,30 @@ users.each do |user|
 end
 
 posts = [
+  [users[4].id, users[4].id, Date.new(2018, 5, 24),
+   "Just saw Avengers Inifity War.. that ending was insane 😱"],
+  [users[3].id, users[4].id, Date.new(2018, 6, 25),
+   "Happy birthday!! ❤️"],
+  [users[2].id, users[4].id, Date.new(2018, 6, 25),
+   "Happy birthday, bud. Hope it's a good one"],
+  [users[0].id, users[4].id, Date.new(2018, 6, 25),
+   "Hbd bro"],
+  [users[4].id, users[4].id, Date.new(2018, 6, 25),
+   "Thanks for all the birthday wishes everyone!"],
+  [users[2].id, users[4].id, Date.new(2018, 7, 3),
+   "Yo are you gonna be at my BBQ tomorrow? Gonna be a great party 🇺🇸"],
+  [users[1].id, users[0].id, Date.new(2018, 8, 12),
+   "Hey man, loved the trilogy. What a great read!"],
+  [users[4].id, users[1].id, Date.new(2018, 8, 15),
+   "You gonna be having a bday party next week?"],
+  [users[3].id, users[1].id, Date.new(2018, 8, 22),
+   "Happy birthday :)"],
+  [users[2].id, users[1].id, Date.new(2018, 8, 22),
+   "Hey, happy birthday! We gotta catch up soon"],
   [users[0].id, users[0].id, Date.new(2018, 9, 30), 
    "Can anyone translate some elvish for me?"],
-  [users[1].id, users[0].id, Date.new(2018, 8, 2),
-   "Hey man, loved the trilogy. What a great read!"]
+  [users[3].id, users[0].id, Date.new(2018, 10, 2),
+   "Wanna go to the Warriors game next week? I got 2 tickets"]
 ]
 
 posts.map! do |a_id, r_id, cta, body|
