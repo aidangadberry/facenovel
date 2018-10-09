@@ -108,7 +108,11 @@
     text-decoration: none;
     color: #365899;
     line-height: 43px;
-    padding: 0 20px;
+    padding: 13px 20px;
+    
+    &:hover {
+      background: #f5f6f7;
+    }
   }
 }
 
