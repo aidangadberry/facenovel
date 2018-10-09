@@ -6,7 +6,8 @@ class PostIndexItem extends React.Component {
   postRecipient(author, recipient) {
     if (author !== recipient) {
       return <span>
-        <i className="fas fa-caret-right"></i><Link to={`/${recipient.userUrl}`}>
+        <i className="fas fa-caret-right"></i>
+        <Link to={`/${recipient.userUrl}`} replace>
           {recipient.fname} {recipient.lname}
         </Link>
       </span>;
@@ -22,7 +23,7 @@ class PostIndexItem extends React.Component {
           <span className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }}/>
           <div>
             <div>
-              <Link to={`/${author.userUrl}`}>
+              <Link to={`/${author.userUrl}`} replace>
                 {author.fname} {author.lname}
               </Link>
               {this.postRecipient(author, recipient)}

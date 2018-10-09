@@ -29,20 +29,20 @@ class MainNavbar extends React.Component {
     return <div className="navbar-container">
         <div className="navbar-main">
           <div className="navbar-left">
-            <Link className="logo-icon" to="/"></Link>
+            <Link className="logo-icon" to="/" replace />
             <div className="user-search">
               <input placeholder="Search" />
             </div>
           </div>
           <div className="navbar-right">
             <div>
-              <Link className="navbar-link" to={`/${user.userUrl}`}>
+              <Link className="navbar-link" to={`/${user.userUrl}`} replace>
                 <span className="navbar-thumbnail" style={{ backgroundImage: `url(${user.profilePictureUrl})` }} />
                 {user.fname}
               </Link>
             </div>
             <div>
-              <Link className="navbar-link" to="/">Home</Link>
+              <Link className="navbar-link" to="/" replace>Home</Link>
             </div>
             <div>
               <a>

@@ -8,7 +8,7 @@ class LoginFormNavbar extends React.Component {
       <div className="login-navbar-container">
         <div className="login-navbar">
           <div className="logo">
-            <Link to="/">
+            <Link to="/" replace>
               <h1>facenovel</h1>
             </Link>
           </div>
