@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { logout } from '../actions/session_actions';
+import { logout } from '../../actions/session_actions';
+import UsersSearchContainer from './users_search_container';
 
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.currentUserId]
@@ -12,8 +13,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class MainNavbar extends React.Component {
-
-
   openDropdown() {
     document.getElementById("settings").classList.add("dropdown-visible");
     document.getElementById("dropdown-background").classList.add("dropdown-visible");
@@ -30,9 +29,7 @@ class MainNavbar extends React.Component {
         <div className="navbar-main">
           <div className="navbar-left">
             <Link className="logo-icon" to="/" replace />
-            <div className="user-search">
-              <input placeholder="Search" />
-            </div>
+            <UsersSearchContainer />
           </div>
           <div className="navbar-right">
             <div>
