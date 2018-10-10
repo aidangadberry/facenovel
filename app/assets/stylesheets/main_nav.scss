@@ -18,15 +18,70 @@
 .navbar-left {
   display: flex;
   align-items: center;
+  width: 500px;
+  min-width: 200px;
+  max-width: 400px;
+  margin-right: 100px;
 
   .logo-icon {
     background-image: image_url("icon.png");
-    // background-image: image_url("profile.png");
     background-size: cover;
     background-position: center center;
     height: 24px;
     width: 24px;
     margin: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .user-search {
+    padding: 0 5px;
+    border: 1px solid #3b5998;
+    border-radius: 3px;
+    height: 26px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #90949c;
+      font-weight: 100;
+    }
+
+    &:focus {
+      outline: none;
+      
+      &::placeholder {
+        color: #bec3c9;
+      }
+    }
+  }
+  
+  .users-list {
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 0 4px 6px 2px rgba(0, 0, 0, .10);
+
+  }
+
+  .users-list-item {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #1d2129;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "Lucida Grande";
+
+    &:hover {
+      background-color: #ecf0f7;
+    }
   }
 }
 
