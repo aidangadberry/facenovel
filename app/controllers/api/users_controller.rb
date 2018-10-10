@@ -19,6 +19,22 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    query = "#{params[:query]}%"
+    
+    # @users = db.execute(<<-SQL, query)
+    # SELECT
+    #   *
+    # FROM
+    #   users
+    # WHERE
+    #   users.fname LIKE ?
+    # SQL
+
+    @users = User.where("LOWER(fname) LIKE ?", query.downcase);
+    render "api/users/search_results"
+  end
+
   def friends
     @users = User.all
     render "api/users/index"

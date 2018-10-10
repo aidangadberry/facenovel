@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     resource :session, only: [:create, :destroy]
 
-    resources :users, only: [:show, :create]
     get '/users/url/:user_url', to: 'users#show_by_url'
+    get '/users/search', to: 'users#search'
     get '/users/:user_id/friends', to: 'users#friends'
     patch '/users/:user_id/photo', to: 'users#update_photo'
+    resources :users, only: [:show, :create]
 
 
     resources :posts, except: [:new, :edit]
