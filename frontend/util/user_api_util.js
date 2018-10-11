@@ -27,3 +27,11 @@ export const updatePhoto = (userId, photoData) => (
     processData: false
   })
 );
+
+export const searchUsers = query => (
+  $.ajax({
+    url: 'api/users/search',
+    method: 'GET',
+    data: { query }
+  })
+);
