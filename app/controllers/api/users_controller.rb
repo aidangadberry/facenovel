@@ -20,18 +20,16 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-    query = "#{params[:query]}%"
-    
-    # @users = db.execute(<<-SQL, query)
-    # SELECT
-    #   *
-    # FROM
-    #   users
-    # WHERE
-    #   users.fname LIKE ?
-    # SQL
+    query = "#{params[:query]}%".downcase
 
-    @users = User.where("LOWER(fname) LIKE ?", query.downcase);
+    @users = User.where(
+      "LOWER(fname) LIKE ?
+      OR LOWER(lname) LIKE ?
+      OR LOWER(fname || ' ' || lname) LIKE ? 
+      OR LOWER(lname || ' ' || fname) LIKE ?", 
+      query, query, query, query)
+      .limit(8);
+
     render "api/users/search_results"
   end
 
