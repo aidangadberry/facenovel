@@ -152,8 +152,8 @@ class SignupForm extends React.Component {
             </p>
           </div>
           <div className="signup-buttons">
-            <input type="submit" value="Sign Up"/>
             <button onClick={this.demoUser}>Demo</button>
+            <input type="submit" value="Sign Up"/>
           </div>
         </form>
       </div>

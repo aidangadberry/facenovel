@@ -20,5 +20,7 @@
 }
 
 body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "Lucida Grande";
   background-color: #e9ebee;
 }

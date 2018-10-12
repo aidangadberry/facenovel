@@ -8,12 +8,42 @@
   background-color: #e9ebee;
 }
 
-.recent-logins {
-  background-color: lightgrey;
+.landing-info {
   width: 532px;
   padding-right: 48px;
   height: 500px;
   background-clip: content-box;
+  color: #666;
+  font-size: 17px;
+
+  .landing-header {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    line-height: 36px;
+  }
+
+  i {
+    color: #adb9d2;
+    font-size: 45px;
+    width: 56px;
+    text-align: center;
+  }
+
+  >div {
+    margin-top: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  b {
+    padding-left: 10px;
+    color: #333;
+    font-weight: bold;
+  }
 }
 
 .signup-form-container {
