@@ -20,4 +20,8 @@ class Post < ApplicationRecord
   belongs_to :recipient,
     foreign_key: :recipient_id,
     class_name: :User
+  
+  has_many :comments,
+    foreign_key: :post_id,
+    class_name: :Comment
 end
