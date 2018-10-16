@@ -1,7 +1,9 @@
 json.set! 'comments' do
-  @comments.each do |comment|
-    json.set! comment.id do
-      json.partial! 'comment', comment: comment
+  if @comments.length > 0
+    json.set! @comments[0].post_id do
+      json.array!(@comments) do |comment|
+        json.partial! 'comment', comment: comment
+      end
     end
   end
 end
