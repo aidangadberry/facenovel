@@ -7,8 +7,18 @@ const usersReducer = (state = {}, action) => {
   const newState = Object.assign({}, state);
 
   switch (action.type) {
-    case RECEIVE_POST_PAYLOAD:
-      return Object.assign(newState, action.postPayload.users);
+    case RECEIVE_POST_PAYLOAD:      
+      for (let userId in action.postPayload.users) {
+        const user = action.postPayload.users[userId];
+        
+        if (newState[userId]) {
+          Object.assign(newState[userId], user);
+        } else {
+          newState[userId] = user;
+        }
+      }
+
+      return newState;
     case RECEIVE_USERS:
       return Object.assign(newState, action.users);
     case RECEIVE_CURRENT_USER:
