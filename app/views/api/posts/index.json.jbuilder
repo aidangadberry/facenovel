@@ -10,6 +10,7 @@ json.set! 'users' do
   @posts.each do |post|
     json.set! post.author_id do
       json.partial! '/api/users/min_user', user: post.author
+      json.profilePictureUrl url_for(post.author.profile_picture)
     end
     json.set! post.recipient_id do
       json.partial! '/api/users/min_user', user: post.recipient

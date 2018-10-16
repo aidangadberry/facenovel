@@ -13,7 +13,11 @@ class Api::PostsController < ApplicationController
     @user = User.find(params[:user_id])
     
     if @user
-      @posts = @user.wall_posts
+      @posts = @user.wall_posts.includes(
+        :recipient,
+        author: {profile_picture_attachment: :blob}
+      )
+
       render "api/posts/index"
     else
       render json: ["A user with that id does not exist"], status: 404
@@ -24,7 +28,11 @@ class Api::PostsController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user
-      @posts = @user.feed_posts
+      @posts = @user.feed_posts.includes(
+        :recipient,
+        author: {profile_picture_attachment: :blob}
+      )
+      
       render "api/posts/index"
     else
       render json: ["A post with that id does not exist"], status: 404
