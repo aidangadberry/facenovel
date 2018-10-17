@@ -14,9 +14,9 @@ class Api::PostsController < ApplicationController
     
     if @user
       @posts = @user.wall_posts.includes(
-        :comments,
         :recipient,
-        author: {profile_picture_attachment: :blob}
+        author: {profile_picture_attachment: :blob},
+        comments: {author: {profile_picture_attachment: :blob}}
       )
 
       render "api/posts/index"
@@ -30,9 +30,9 @@ class Api::PostsController < ApplicationController
 
     if @user
       @posts = @user.feed_posts.includes(
-        :comments,
         :recipient,
-        author: {profile_picture_attachment: :blob}
+        author: {profile_picture_attachment: :blob},
+        comments: {author: {profile_picture_attachment: :blob}}
       )
       
       render "api/posts/index"
