@@ -1,0 +1,37 @@
+.comment-container {
+  min-height: 32px;
+  padding-top: 6px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.comment-thumbnail {
+  min-width: 32px;
+  max-width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  margin-right: 6px;
+  background-size: cover;
+  background-position: center center;
+  image-rendering: auto;
+  float: left;
+}
+
+.comment-body {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 18px;
+  line-height: 16px;
+  background-color: #eff1f3;
+  font-size: 13px;
+  
+  a {
+    color: #365899;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-color: #365899;
+    }
+  }
+}
