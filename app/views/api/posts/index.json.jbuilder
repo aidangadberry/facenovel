@@ -17,3 +17,15 @@ json.set! 'users' do
     end
   end
 end
+
+json.set! 'comments' do
+  @posts.each do |post|
+    if post.comments.length != 0
+      json.set! post.id do
+        json.array!(post.comments) do |comment|
+          json.partial! '/api/comments/comment', comment: comment
+        end
+      end
+    end
+  end
+end

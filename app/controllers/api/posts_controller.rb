@@ -14,6 +14,7 @@ class Api::PostsController < ApplicationController
     
     if @user
       @posts = @user.wall_posts.includes(
+        :comments,
         :recipient,
         author: {profile_picture_attachment: :blob}
       )
@@ -29,6 +30,7 @@ class Api::PostsController < ApplicationController
 
     if @user
       @posts = @user.feed_posts.includes(
+        :comments,
         :recipient,
         author: {profile_picture_attachment: :blob}
       )
