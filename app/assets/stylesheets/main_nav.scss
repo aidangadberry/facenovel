@@ -94,9 +94,12 @@
   .navbar-thumbnail {
     width: 24px;
     height: 24px;
+    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 12px;
     margin-right: 8px;
+    box-sizing: border-box;
     background-size: cover;
+    background-origin: border-box;
     background-position: center center;
     image-rendering: auto;
     float: left;

@@ -174,9 +174,12 @@
   width: 40px;
   height: 40px;
   border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, .1);
   margin-right: 5px;
   background-size: cover;
   background-position: center center;
+  background-origin: border-box;
+  box-sizing: border-box;
   image-rendering: auto;
   float: left;
 }
@@ -193,7 +196,6 @@
 .post-comments {
   border-top: 1px solid #e5e5e5;
   padding-top: 6px;
-  padding-right: 24px;
 }
 
 // Edit / Delete Modal

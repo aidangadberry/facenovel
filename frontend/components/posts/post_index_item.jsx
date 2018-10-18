@@ -21,7 +21,11 @@ class PostIndexItem extends React.Component {
     return (
       <div className="post-container">
         <div className="post-header">
-          <span className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }}/>
+          <Link
+            to={`/${author.userUrl}`} replace
+            className="post-thumbnail"
+            style={{ backgroundImage: `url(${author.profilePictureUrl})` }}
+          />
           <div>
             <div>
               <Link to={`/${author.userUrl}`} replace>

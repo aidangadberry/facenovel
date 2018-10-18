@@ -1,6 +1,7 @@
 .comment-container {
   min-height: 32px;
   padding-top: 6px;
+  margin-right: 24px;
   display: flex;
   justify-content: flex-start;
 }
@@ -9,10 +10,13 @@
   min-width: 32px;
   max-width: 32px;
   height: 32px;
+  border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 20px;
   margin-right: 6px;
   background-size: cover;
+  background-origin: border-box;
   background-position: center center;
+  box-sizing: border-box;
   image-rendering: auto;
   float: left;
 }
