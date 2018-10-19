@@ -6,3 +6,7 @@ const receiveComment = comment => ({
   type: RECEIVE_COMMENT,
   comment
 });
+
+export const createComment = comment => dispatch => (
+  ApiUtil.createComment(comment).then(res => dispatch(receiveComment(res)))
+);
