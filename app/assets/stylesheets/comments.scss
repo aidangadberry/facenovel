@@ -28,6 +28,7 @@
   line-height: 16px;
   background-color: #eff1f3;
   font-size: 13px;
+  white-space: pre-wrap;
   
   a {
     color: #365899;
@@ -38,4 +39,35 @@
       text-decoration-color: #365899;
     }
   }
+}
+
+
+.comment-form-container {
+
+}
+
+.comment-form {
+  display: flex;
+
+  .comment-textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 13px;
+    border: 1px solid black;
+    line-height: 16px;
+    height: auto;
+    min-height: 20px;
+    display: inline-block;
+
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+  .textarea[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555; 
+}
 }

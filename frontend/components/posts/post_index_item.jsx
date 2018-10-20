@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PostEditButton from './post_edit_button';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CreateCommentFormContainer from '../comments/create_comment_form_container';
 
 class PostIndexItem extends React.Component {
   postRecipient(author, recipient) {
@@ -42,6 +43,7 @@ class PostIndexItem extends React.Component {
         </div>
         <div className="post-comments">
           <CommentIndexContainer postId={post.id} />
+          <CreateCommentFormContainer postId={post.id} />
         </div>
       </div>
     );
