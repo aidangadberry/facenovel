@@ -1,6 +1,6 @@
 .comment-container {
   min-height: 32px;
-  padding-top: 6px;
+  padding-bottom: 6px;
   margin-right: 24px;
   display: flex;
   justify-content: flex-start;
@@ -43,31 +43,46 @@
 
 
 .comment-form-container {
-
+  margin-bottom: -4px;
 }
 
 .comment-form {
   display: flex;
 
+  form {
+    width: 100%;
+  }
+
   .comment-textarea {
     width: 100%;
-    resize: none;
+    min-height: 18px;
+    height: auto;
+    padding: 7px 10px;
+    border: 1px solid #ccd0d5;
+    border-radius: 18px;
     box-sizing: border-box;
     font-size: 13px;
-    border: 1px solid black;
     line-height: 16px;
-    height: auto;
-    min-height: 20px;
+    background-color: #f2f3f5;
     display: inline-block;
+    resize: none;
+    cursor: text;
 
     &:focus {
       outline: none;
     }
-
   }
 
-  .textarea[placeholder]:empty:before {
+  .comment-textarea[placeholder]:empty:before {
     content: attr(placeholder);
-    color: #555; 
-}
+    color: #8f939b;
+
+    font-size: 13px;
+  }
+
+  .comment-textarea[placeholder]:empty:focus:before {
+    color: #bec3c9;
+  }
+
+  
 }
