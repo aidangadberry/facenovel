@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -55,7 +55,11 @@ class PostForm extends React.Component {
           {formType}
         </div>
         <div className="post-form-content">
-          <span className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }} />
+          <Link
+            to={`/${author.userUrl}`} replace
+            className="post-thumbnail"
+            style={{ backgroundImage: `url(${author.profilePictureUrl})` }}
+          />
           <form onSubmit={this.handleSubmit}>
             <textarea 
               value={this.state.body}

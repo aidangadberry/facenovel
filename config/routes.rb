@@ -9,10 +9,12 @@ Rails.application.routes.draw do
     patch '/users/:user_id/photo', to: 'users#update_photo'
     resources :users, only: [:show, :create]
 
-
     resources :posts, except: [:new, :edit]
     get '/users/:user_id/posts', to: 'posts#wall_posts'
     get '/users/:user_id/feed', to: 'posts#feed_posts'
+
+    resources :comments, only: [:show, :create, :update, :destroy]
+    get '/posts/:post_id/comments', to: 'comments#index'
   end
 
   root 'static_pages#root'

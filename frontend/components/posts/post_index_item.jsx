@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PostEditButton from './post_edit_button';
+import CommentIndexContainer from '../comments/comment_index_container';
+import CreateCommentFormContainer from '../comments/create_comment_form_container';
 
 class PostIndexItem extends React.Component {
   postRecipient(author, recipient) {
@@ -13,14 +15,18 @@ class PostIndexItem extends React.Component {
       </span>;
     }
   }
-
+  
   render() {
     const { author, recipient, post } = this.props;
 
     return (
       <div className="post-container">
         <div className="post-header">
-          <span className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }}/>
+          <Link
+            to={`/${author.userUrl}`} replace
+            className="post-thumbnail"
+            style={{ backgroundImage: `url(${author.profilePictureUrl})` }}
+          />
           <div>
             <div>
               <Link to={`/${author.userUrl}`} replace>
@@ -34,6 +40,10 @@ class PostIndexItem extends React.Component {
         </div>
         <div className="post-content">
           {post.body}
+        </div>
+        <div className="post-comments">
+          <CommentIndexContainer postId={post.id} />
+          <CreateCommentFormContainer postId={post.id} />
         </div>
       </div>
     );
