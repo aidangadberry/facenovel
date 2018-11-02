@@ -5,16 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(
-  email: "demo@demo.com",
-  password: "123123",
-  fname: "Demo",
-  lname: "Demothy",
-  user_url: "DemoUser",
-  birthday: Date.new(1985, 7, 12)
-)
 
 users = [
+  ["demo", "123123", "Kene", "Rieder", "ilovebooks", "M", Date.new(1985, 7, 12)],
   ["jrrt", "123123", "J. R. R.", "Tolkien", "ringl0rd", "M", Date.new(1892, 1, 3)],
   ["rayb", "123123", "Ray", "Bradbury", "451burnit", "M", Date.new(1920, 8, 22)],
   ["charlesd", "123123", "Charles", "Dickens", "chuckyd", "M", Date.new(1812, 2, 7)],
