@@ -21,18 +21,18 @@ class LandingPage extends React.Component {
                 <b>Share what's new</b>&nbsp;in your life on your Timeline.
               </div>
               <div>
-                <i class="fas fa-flask" />
+                <i className="fas fa-flask" />
                 <b>Try it out</b>&nbsp;before registering by selecting&nbsp;<b>Demo</b>!
               </div>
             </div>
             <div className="about">
               <div>This clone was created by Aidan Gadberry</div>
               <div>
-                <i class="fab fa-github-square" />
+                <i className="fab fa-github-square" />
                 Check out my <a href="https://github.com/aidangadberry">GitHub</a> for more projects
               </div>
               <div>
-                <i class="fab fa-linkedin" />
+                <i className="fab fa-linkedin" />
                 Connect with me on <a href="https://www.linkedin.com/in/aidangadberry/">LinkedIn</a>
               </div>
             </div>
