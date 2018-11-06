@@ -12,7 +12,9 @@ users = [
   ["rayb", "123123", "Ray", "Bradbury", "451burnit", "M", Date.new(1920, 8, 22)],
   ["charlesd", "123123", "Charles", "Dickens", "chuckyd", "M", Date.new(1812, 2, 7)],
   ["hlee", "123123", "Harper", "Lee", "harperlee", "F", Date.new(1926, 4, 28)],
-  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)]
+  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)],
+  ["grrm", "123123", "George", "R. R. Martin", "iceNfire", "M", Date.new(1948, 9, 20)],
+  ["jkr", "123123", "Joanne", "K. Rowling", "quidditchr0x", "F", Date.new(1965, 7, 31)]
 ]
 
 users.map! do |email, pw, fn, ln, url, sex, bday|
@@ -58,7 +60,9 @@ posts = [
   [users[0].id, users[0].id, Date.new(2018, 9, 30), 
    "Can anyone translate some elvish for me?"],
   [users[3].id, users[0].id, Date.new(2018, 10, 2),
-   "Wanna go to the Warriors game next week? I got 2 tickets"]
+   "Wanna go to the Warriors game next week? I got 2 tickets"],
+  [users[7].id, users[7].id, Date.new(2018, 10, 15),
+   "Fantastic Beasts 2 is in theaters soon! You should all go see it ❤️"]
 ]
 
 posts.map! do |a_id, r_id, cta, body|
