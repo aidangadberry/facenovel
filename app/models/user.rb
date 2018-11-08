@@ -36,9 +36,9 @@ class User < ApplicationRecord
       Friend.where("requested_id = ? AND accepted = ?", self.id, true)
     ).map do |request| 
       if request.requesting_user.id == self.id
-        request.requested_user
+        request.requested_user.id
       else
-        request.requesting_user
+        request.requesting_user.id
       end
     end
   end
@@ -49,8 +49,9 @@ class User < ApplicationRecord
   end
 
   def feed_posts
-    # return all posts for now, change when friends feature is implemented
-    Post.all
+    friend_ids = friends
+    
+    Post.where("author_id IN (?) AND recipient_id IN (?)", friend_ids, friend_ids)
   end
 
   def attach_default_photos

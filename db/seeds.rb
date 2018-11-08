@@ -58,11 +58,26 @@ posts = [
   [users[0].id, users[0].id, Date.new(2018, 9, 30), 
    "Can anyone translate some elvish for me?"],
   [users[3].id, users[0].id, Date.new(2018, 10, 2),
+   "Wanna go to the Warriors game next week? I got 2 tickets"],
+  [users[3].id, users[0].id, Date.new(2018, 10, 15),
    "Wanna go to the Warriors game next week? I got 2 tickets"]
 ]
 
 posts.map! do |a_id, r_id, cta, body|
   Post.create(
     author_id: a_id, recipient_id: r_id, body: body, created_at: cta
+  )
+end
+
+friends = [
+  [users[0].id, users[1].id, true],
+  [users[2].id, users[0].id, true],
+  [users[0].id, users[3].id, true],
+  [users[0].id, users[4].id, false]
+]
+
+friends.map! do |req_id, rec_id, acc|
+  Friend.create(
+    requesting_id: req_id, requested_id: rec_id, accepted: acc
   )
 end
