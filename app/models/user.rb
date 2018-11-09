@@ -49,7 +49,7 @@ class User < ApplicationRecord
   end
 
   def feed_posts
-    friend_ids = friends
+    friend_ids = friends << self.id
     
     Post.where("author_id IN (?) AND recipient_id IN (?)", friend_ids, friend_ids)
   end
