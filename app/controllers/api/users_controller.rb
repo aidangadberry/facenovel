@@ -34,7 +34,7 @@ class Api::UsersController < ApplicationController
   end
 
   def friends
-    @users = User.find(params[:id]).friends
+    @users = User.find(params[:user_id]).friends
     render "api/users/index"
   end
 

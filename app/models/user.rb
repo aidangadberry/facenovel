@@ -36,9 +36,9 @@ class User < ApplicationRecord
       Friend.where("requested_id = ? AND accepted = ?", self.id, true)
     ).map do |request| 
       if request.requesting_user.id == self.id
-        request.requested_user.id
+        request.requested_user
       else
-        request.requesting_user.id
+        request.requesting_user
       end
     end
   end
@@ -49,7 +49,7 @@ class User < ApplicationRecord
   end
 
   def feed_posts
-    friend_ids = friends << self.id
+    friend_ids = friends.map { |user| user.id } << self.id
     
     Post.where("author_id IN (?) AND recipient_id IN (?)", friend_ids, friend_ids)
   end
