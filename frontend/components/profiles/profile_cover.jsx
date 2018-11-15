@@ -39,7 +39,7 @@ class ProfileCover extends React.Component {
             </div>
           </div>
           <div className="cover-content-right">
-            <button>Update Info</button>
+            {/* <button>Update Info</button> */}
           </div>
         </div>
         <div />

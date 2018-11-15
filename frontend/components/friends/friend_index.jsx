@@ -30,7 +30,12 @@ class FriendIndex extends React.Component {
       return <FriendIndexItem user={friend} key={friend.id} />;
     });
 
-    return <div className="friend-index">{friends}</div>;
+    return (
+      <div className="sidebar-friends">
+        <div className="friends-header">Friends · <p>{friends.length}</p></div>
+        <div className="friend-index">{friends}</div>
+      </div>
+    );
   }
 }
 
