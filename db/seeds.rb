@@ -12,7 +12,8 @@ users = [
   ["rayb", "123123", "Ray", "Bradbury", "451burnit", "M", Date.new(1920, 8, 22)],
   ["charlesd", "123123", "Charles", "Dickens", "chuckyd", "M", Date.new(1812, 2, 7)],
   ["hlee", "123123", "Harper", "Lee", "harperlee", "F", Date.new(1926, 4, 28)],
-  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)]
+  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)],
+  ["grrm", "123123", "George", "R. R. Martin", "iceandfire", "M", Date.new(1948, 9, 20)]
 ]
 
 users.map! do |email, pw, fn, ln, url, sex, bday|
@@ -58,8 +59,6 @@ posts = [
   [users[0].id, users[0].id, Date.new(2018, 9, 30), 
    "Can anyone translate some elvish for me?"],
   [users[3].id, users[0].id, Date.new(2018, 10, 2),
-   "Wanna go to the Warriors game next week? I got 2 tickets"],
-  [users[3].id, users[0].id, Date.new(2018, 10, 15),
    "Wanna go to the Warriors game next week? I got 2 tickets"]
 ]
 
@@ -73,7 +72,16 @@ friends = [
   [users[0].id, users[1].id, true],
   [users[2].id, users[0].id, true],
   [users[0].id, users[3].id, true],
-  [users[0].id, users[4].id, false]
+  [users[0].id, users[4].id, true],
+  [users[0].id, users[5].id, true],
+  [users[1].id, users[5].id, true],
+  [users[1].id, users[4].id, true],
+  [users[1].id, users[3].id, true],
+  [users[2].id, users[5].id, true],
+  [users[2].id, users[1].id, true],
+  [users[2].id, users[4].id, true],
+  [users[3].id, users[5].id, true],
+  [users[4].id, users[3].id, true],
 ]
 
 friends.map! do |req_id, rec_id, acc|
