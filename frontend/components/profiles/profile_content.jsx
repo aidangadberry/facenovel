@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import TimelineContent from './timeline_content';
+import FriendThumbnailsContainer from '../friends/friend_thumbnails_container';
 
 class ProfileContent extends React.Component {
   formatBirthday(birthday) {
@@ -22,6 +23,7 @@ class ProfileContent extends React.Component {
               {this.formatBirthday(this.props.user.birthday)}
             </div>
           </div>
+          <FriendThumbnailsContainer userId={this.props.user.id}/>
         </div>
         <div className="content-main">
           <Switch>

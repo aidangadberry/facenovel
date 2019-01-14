@@ -31,6 +31,29 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
   has_one_attached :cover_photo
 
+  def friends
+    Friend.where("requesting_id = ? AND accepted = ?", self.id, true).or(
+      Friend.where("requested_id = ? AND accepted = ?", self.id, true)
+    ).map do |request| 
+      if request.requesting_user.id == self.id
+        request.requested_user
+      else
+        request.requesting_user
+      end
+    end
+  end
+  
+  def wall_posts
+    Post.where("recipient_id = ?", self.id)
+      .order(created_at: :desc)
+  end
+
+  def feed_posts
+    friend_ids = friends.map { |user| user.id } << self.id
+    
+    Post.where("author_id IN (?) AND recipient_id IN (?)", friend_ids, friend_ids)
+  end
+
   def attach_default_photos
     self.profile_picture.attach(
       io: File.open(Rails.root.join('app', 'assets', 'images', 'profile.png')), 
@@ -41,16 +64,6 @@ class User < ApplicationRecord
       io: File.open(Rails.root.join('app', 'assets', 'images', 'cover.jpg')), 
       filename: 'cover.jpg', content_type: 'image/png'
     )
-  end
-  
-  def wall_posts
-    Post.where("recipient_id = ?", self.id)
-      .order(created_at: :desc)
-  end
-
-  def feed_posts
-    # return all posts for now, change when friends feature is implemented
-    Post.all
   end
     
   def self.generate_session_token

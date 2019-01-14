@@ -12,7 +12,8 @@ users = [
   ["rayb", "123123", "Ray", "Bradbury", "451burnit", "M", Date.new(1920, 8, 22)],
   ["charlesd", "123123", "Charles", "Dickens", "chuckyd", "M", Date.new(1812, 2, 7)],
   ["hlee", "123123", "Harper", "Lee", "harperlee", "F", Date.new(1926, 4, 28)],
-  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)]
+  ["georgeo", "123123", "George", "Orwell", "bigbrother", "M", Date.new(1903, 6, 25)],
+  ["grrm", "123123", "George", "R. R. Martin", "iceandfire", "M", Date.new(1948, 9, 20)]
 ]
 
 users.map! do |email, pw, fn, ln, url, sex, bday|
@@ -64,5 +65,27 @@ posts = [
 posts.map! do |a_id, r_id, cta, body|
   Post.create(
     author_id: a_id, recipient_id: r_id, body: body, created_at: cta
+  )
+end
+
+friends = [
+  [users[0].id, users[1].id, true],
+  [users[2].id, users[0].id, true],
+  [users[0].id, users[3].id, true],
+  [users[0].id, users[4].id, true],
+  [users[0].id, users[5].id, true],
+  [users[1].id, users[5].id, true],
+  [users[1].id, users[4].id, true],
+  [users[1].id, users[3].id, true],
+  [users[2].id, users[5].id, true],
+  [users[2].id, users[1].id, true],
+  [users[2].id, users[4].id, true],
+  [users[3].id, users[5].id, true],
+  [users[4].id, users[3].id, true],
+]
+
+friends.map! do |req_id, rec_id, acc|
+  Friend.create(
+    requesting_id: req_id, requested_id: rec_id, accepted: acc
   )
 end

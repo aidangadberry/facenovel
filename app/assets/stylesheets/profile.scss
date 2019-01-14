@@ -84,7 +84,7 @@
 }
 
 .profile-navbar {
-  width: 648px;
+  width: 647px;
   height: 43px;
   padding-left: 201px;
   font-size: 14px;
@@ -144,30 +144,31 @@
 
 .content-sidebar {
   margin-right: 10px;
-  background-color: white;
-  border: 1px solid #dddfe2;
-  border-radius: 3px;
-  width: 314px;
-  padding: 12px;
+  width: 340px;
 }
 
-.profile-intro {
+.profile-intro, .sidebar-friends {
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  padding: 12px;
+  margin-bottom: 10px;
   color: #1d2129;
+  background-color: white;
+}
 
-  .intro-header {
-    font-size: 16px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ebedf0;
-  }
+.intro-header {
+  font-size: 16px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ebedf0;
+}
 
-  .intro-content {
-    font-size: 14px;
-    margin-top: 12px;
-  }
-  
-  i {
-    padding-right: 5px;
-  }
+.intro-content {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+i {
+  padding-right: 5px;
 }
 
 .content-main {
