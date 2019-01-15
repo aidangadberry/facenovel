@@ -70,3 +70,25 @@ posts.map! do |a_id, r_id, cta, body|
     author_id: a_id, recipient_id: r_id, body: body, created_at: cta
   )
 end
+
+friends = [
+  [users[0].id, users[1].id, true],
+  [users[2].id, users[0].id, true],
+  [users[0].id, users[3].id, true],
+  [users[0].id, users[4].id, true],
+  [users[0].id, users[5].id, true],
+  [users[1].id, users[5].id, true],
+  [users[1].id, users[4].id, true],
+  [users[1].id, users[3].id, true],
+  [users[2].id, users[5].id, true],
+  [users[2].id, users[1].id, true],
+  [users[2].id, users[4].id, true],
+  [users[3].id, users[5].id, true],
+  [users[4].id, users[3].id, true],
+]
+
+friends.map! do |req_id, rec_id, acc|
+  Friend.create(
+    requesting_id: req_id, requested_id: rec_id, accepted: acc
+  )
+end
