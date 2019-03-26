@@ -49,28 +49,22 @@ class PostForm extends React.Component {
   render() {
     const { formType, formButtonText, author } = this.props;
     
-    return (
-      <div className="post-container">
-        <div className="post-form-header">
-          {formType}
-        </div>
+    return <div className="post-container">
+        <div className="post-form-header">{formType}</div>
         <div className="post-form-content">
-          <Link
-            to={`/${author.userUrl}`} replace
-            className="post-thumbnail"
-            style={{ backgroundImage: `url(${author.profilePictureUrl})` }}
-          />
+          <Link to={`/${author.userUrl}`} replace className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }} />
           <form onSubmit={this.handleSubmit}>
-            <textarea 
-              value={this.state.body}
-              onChange={this.handleChange('body')}
-              placeholder={this.placeholderText()}
-              />
-            <button>{formButtonText}</button>
+            <textarea value={this.state.body} onChange={this.handleChange("body")} placeholder={this.placeholderText()} />
+            <div className="post-form-footer">
+              <label htmlFor="image-upload">
+                <i className="fa fa-paperclip" aria-hidden="true" />
+              </label>
+              <input id="image-upload" type="file" />
+              <button>{formButtonText}</button>
+            </div>
           </form>
         </div>
-      </div>
-    )
+      </div>;
   }
 }
 
