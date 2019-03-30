@@ -43,7 +43,6 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.images.attach(params[:post][:images])
 
     if @post.save
       render "api/posts/show"
@@ -80,6 +79,6 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:author_id, :recipient_id, :body, :images)
+    params.require(:post).permit(:author_id, :recipient_id, :body, :image)
   end
 end
