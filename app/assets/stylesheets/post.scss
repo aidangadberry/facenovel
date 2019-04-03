@@ -38,6 +38,10 @@
     }
   }
 
+  img {
+    width: 100%;
+  }
+
   .post-form-footer {
     display: flex;
     align-items: center;
@@ -217,8 +221,12 @@
 }
 
 .post-image {
-  margin-top: 5px;
+  margin-top: 10px;
   width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .post-comments {
