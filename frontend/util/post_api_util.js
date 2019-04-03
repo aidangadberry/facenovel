@@ -13,10 +13,12 @@ export const fetchFeedPosts = userId => $.ajax({
   method: 'GET'
 });
 
-export const createPost = (post, photoData) => $.ajax({
+export const createPost = post => $.ajax({
   url: 'api/posts',
   method: 'POST',
-  data: { post, photoData }
+  data: post,
+  contentType: false,
+  processData: false
 });
 
 export const updatePost = post => $.ajax({
