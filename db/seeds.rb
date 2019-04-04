@@ -58,17 +58,28 @@ posts = [
   [users[2].id, users[1].id, Date.new(2018, 8, 22),
    "Hey, happy birthday! We gotta catch up soon"],
   [users[0].id, users[0].id, Date.new(2018, 9, 30), 
-   "Can anyone translate some elvish for me?"],
+   "Can anyone translate some elvish for me?",
+   "elvish.jpg"],
   [users[3].id, users[0].id, Date.new(2018, 10, 2),
    "Wanna go to the Warriors game next week? I got 2 tickets"],
   [users[7].id, users[7].id, Date.new(2018, 10, 15),
-   "Fantastic Beasts 2 is in theaters soon! You should all go see it ❤️"]
+   "Fantastic Beasts 2 is in theaters soon! You should all go see it ❤️"],
+  [users[6].id, users[6].id, Date.new(2018, 11, 10),
+   "A working cover of my new book. Hope you guys like it!",
+   "fireandblood.jpg"],
 ]
 
-posts.map! do |a_id, r_id, cta, body|
-  Post.create(
+posts.map! do |a_id, r_id, cta, body, img|
+  post = Post.create(
     author_id: a_id, recipient_id: r_id, body: body, created_at: cta
   )
+
+  if img
+    post.image.attach(
+      io: File.open(Rails.root.join("app", "assets", "images", "seeds", "#{img}")), 
+      filename: "#{img}", content_type: "image/jpg"
+    )
+  end
 end
 
 friends = [
@@ -85,6 +96,10 @@ friends = [
   [users[2].id, users[4].id, true],
   [users[3].id, users[5].id, true],
   [users[4].id, users[3].id, true],
+  [users[6].id, users[0].id, true],
+  [users[7].id, users[0].id, true],
+  [users[7].id, users[2].id, true],
+  [users[6].id, users[7].id, true]
 ]
 
 friends.map! do |req_id, rec_id, acc|

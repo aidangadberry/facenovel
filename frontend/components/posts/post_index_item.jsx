@@ -15,6 +15,26 @@ class PostIndexItem extends React.Component {
       </span>;
     }
   }
+
+  renderImages() {
+    // if (this.props.post.imageUrls) {
+    //   return this.props.post.imageUrls.map(
+    //     (url, idx) => <img 
+    //       className="post-image"
+    //       key={idx}
+    //       src={url}
+    //     />
+    //   );
+    // } else {
+    //   return null;
+    // }
+
+    if (this.props.post.imageUrl) {
+      return <img className="post-image" src={this.props.post.imageUrl} />
+    } else {
+      return null;
+    }
+  }
   
   render() {
     const { author, recipient, post } = this.props;
@@ -40,6 +60,7 @@ class PostIndexItem extends React.Component {
         </div>
         <div className="post-content">
           {post.body}
+          {this.renderImages()}
         </div>
         <div className="post-comments">
           <CommentIndexContainer postId={post.id} />

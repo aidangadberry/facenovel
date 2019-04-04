@@ -6,6 +6,9 @@ class PostForm extends React.Component {
     super(props);
     this.state = props.post;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
+
+    this.photoData;
   }
 
   componentDidUpdate(prevProps) {
@@ -27,13 +30,35 @@ class PostForm extends React.Component {
     return e => this.setState({[field]: e.target.value})
   }
 
+  handleImageUpload(e) {
+    console.log(e.target.files[0]);
+    this.setState({
+      image: URL.createObjectURL(e.target.files[0])
+    })
+
+    this.photoData = e.currentTarget.files[0];
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
     // make sure the post body isn't just whitespace
     if ((/\S+/).test(this.state.body)) {
-      this.props.action(this.state);
-      this.setState({body: ""});
+      const postData = new FormData();
+
+      for (let key in this.state) {
+        postData.append(`post[${key}]`, this.state[key]);
+      }
+      if (this.photoData) {
+        postData.append('post[image]', this.photoData);
+      } else {
+        postData.delete('post[image]');
+      }
+
+      this.props.action(postData);
+
+      this.setState({body: "", image: null});
+      this.photoData = null;
       if (this.props.hideModal) this.props.hideModal();
     }
   }
@@ -49,28 +74,23 @@ class PostForm extends React.Component {
   render() {
     const { formType, formButtonText, author } = this.props;
     
-    return (
-      <div className="post-container">
-        <div className="post-form-header">
-          {formType}
-        </div>
+    return <div className="post-container">
+        <div className="post-form-header">{formType}</div>
         <div className="post-form-content">
-          <Link
-            to={`/${author.userUrl}`} replace
-            className="post-thumbnail"
-            style={{ backgroundImage: `url(${author.profilePictureUrl})` }}
-          />
+          <Link to={`/${author.userUrl}`} replace className="post-thumbnail" style={{ backgroundImage: `url(${author.profilePictureUrl})` }} />
           <form onSubmit={this.handleSubmit}>
-            <textarea 
-              value={this.state.body}
-              onChange={this.handleChange('body')}
-              placeholder={this.placeholderText()}
-              />
-            <button>{formButtonText}</button>
+            <textarea value={this.state.body} onChange={this.handleChange("body")} placeholder={this.placeholderText()} />
+            { this.photoData ? <img src={this.state.image} /> : null }
+            <div className="post-form-footer">
+              <label htmlFor="image-upload">
+                <i className="fa fa-paperclip" aria-hidden="true" />
+              </label>
+              <input id="image-upload" type="file" onChange={this.handleImageUpload} />
+              <button>{formButtonText}</button>
+            </div>
           </form>
         </div>
-      </div>
-    )
+      </div>;
   }
 }
 
