@@ -1,6 +1,5 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   context: __dirname,
@@ -27,9 +26,11 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   optimization: {
     minimizer: [
       new TerserPlugin({
+        extractComments: false,
         terserOptions: {
           compress: {
             drop_console: true, // Remove console.log statements
@@ -40,8 +41,5 @@ module.exports = {
         }
       }),
     ],
-  },
-  plugins: [
-    new BundleAnalyzerPlugin()
-  ]
+  }
 };
