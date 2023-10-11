@@ -1,29 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+
 import configureStore from './store/store';
 import Root from './components/root';
-import { logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let store;
+  let preloadedState;
 
   if (window.currentUser) {
-    const preloadedState = {
+    preloadedState = {
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
       },
       session: { currentUserId: window.currentUser.id }
     };
-    store = configureStore(preloadedState);
     delete window.currentUser;
-  } else {
-    store = configureStore();
   }
 
-  const root = document.getElementById('root');
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.logout = logout;
+  const store = configureStore(preloadedState);
 
-  ReactDOM.render(<Root store={store} />, root);
+  const container = document.getElementById('root');
+  const root = createRoot(container);
+
+  root.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <Root />
+      </Provider>
+    </React.StrictMode>
+  );
 });
