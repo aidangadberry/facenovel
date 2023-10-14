@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: facenovel_production
   username: facenovel
   password: <%= ENV['FACENOVEL_DATABASE_PASSWORD'] %>
