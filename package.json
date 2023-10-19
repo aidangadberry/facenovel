@@ -2,8 +2,8 @@
   "name": "facenovel",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.23.0",
-    "@babel/preset-env": "^7.22.20",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@reduxjs/toolkit": "^1.9.7",
     "babel-loader": "^9.1.3",
