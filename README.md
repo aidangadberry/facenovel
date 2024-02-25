@@ -2,7 +2,7 @@
 
 Facenovel is a Facebook clone that lets you create an account to post your thoughts on friends' walls. In the future, you will be able to comment on posts, like posts, and upload pictures!
 
-[Live Site](https://facenovel.herokuapp.com/#/)
+[Live Site](https://facenovel.onrender.com/#/)
 
 ## Technologies Used
 
